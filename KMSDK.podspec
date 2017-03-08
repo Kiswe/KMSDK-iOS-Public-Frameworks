@@ -18,12 +18,13 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-This is technically KMSDK v4.
+Kiswe iOS SDK
                        DESC
 
   s.homepage         = 'http://developer.kiswe.com/'
   s.license          = 'Private'
   s.author           = { 'Rodrigo Pacheco Curro' => 'rodrigo.pachecocurro@kiswe.com' }
+  s.source           = { :git => 'https://bitbucket.org/kiswe/kmsdk-ios-public.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '9.3'
 
