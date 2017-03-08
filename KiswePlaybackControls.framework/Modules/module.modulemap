@@ -1,0 +1,10 @@
+framework module KiswePlaybackControls {
+  umbrella header "PlaybackControls-iOS-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module KiswePlaybackControls.Swift {
+    header "KiswePlaybackControls-Swift.h"
+}

@@ -1,0 +1,10 @@
+framework module KMSDK {
+  umbrella header "KMSDK-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module KMSDK.Swift {
+    header "KMSDK-Swift.h"
+}
