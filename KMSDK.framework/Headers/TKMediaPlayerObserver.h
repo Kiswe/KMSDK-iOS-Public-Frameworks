@@ -16,11 +16,11 @@
 
 @interface TKMediaPlayerObserver : NSObject
 
-@property (readwrite, assign) AVPlayer* mPlayer;
-@property (nonatomic, assign) KMPlayerView *mPlayerView;
-@property (nonatomic, assign) TKPlayerControlsView *mPlayerControls;
-@property (nonatomic, assign) Event *event;
-@property (nonatomic, strong) NSMutableDictionary *overlayObjects;
+@property (readwrite, assign, nullable) AVPlayer* mPlayer;
+@property (nonatomic, assign, nullable) KMPlayerView *mPlayerView;
+@property (nonatomic, assign, nullable) TKPlayerControlsView *mPlayerControls;
+@property (nonatomic, assign, nullable) Event *event;
+@property (nonatomic, strong, nullable) NSMutableDictionary *overlayObjects;
 @property (assign) BOOL disableDrawing;
 @property (nonatomic, readonly) unsigned int lastMediaEpoch;
 @property (nonatomic, readonly) unsigned int lastMediaTimestamp;
@@ -41,7 +41,7 @@
 - (void)removeAllObservers;
 - (void)setupNascarTrack;
 - (void)removeNascarTrack;
-- (void)observeValueForKeyPath:(NSString*) path ofObject:(id)object change:(NSDictionary*)change context:(void*)context;
+- (void)observeValueForKeyPath:(null_unspecified NSString*) path ofObject:(null_unspecified id)object change:(null_unspecified NSDictionary*)change context:(null_unspecified void*)context;
 
 // Drawing
 - (void)showPipBorderIfMix;
