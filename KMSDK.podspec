@@ -26,7 +26,7 @@ Kiswe iOS SDK
   s.author           = { 'Rodrigo Pacheco Curro' => 'rodrigo.pachecocurro@kiswe.com' }
   s.source           = { :git => 'https://bitbucket.org/kiswe/kmsdk-ios-public-frameworks.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '9.3'
+  s.ios.deployment_target = '9.0'
 
   s.dependency 'WebViewJavascriptBridge', '~> 6.0.2'
   s.dependency 'CocoaLumberjack', '~> 3.1.0'
