@@ -112,6 +112,10 @@ extern NSString* const statusCodePlayerStateKey;
 
 extern NSString* const currentlySelectedWidgetIndexNotification;
 
+extern NSString* const playerSwitchingStreamNotification;
+extern NSString* const playerSwitchingFromStreamKey;
+extern NSString* const playerSwitchingToStreamKey;
+
 #pragma mark - Global Enum
 
 // Event time period
