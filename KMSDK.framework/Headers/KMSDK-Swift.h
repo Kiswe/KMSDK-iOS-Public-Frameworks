@@ -213,6 +213,14 @@ SWIFT_CLASS("_TtC5KMSDK19KMMediaPlayerHelper")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+typedef SWIFT_ENUM(NSInteger, KMMediaState) {
+  KMMediaStateUnknown = 0,
+  KMMediaStateReadyToPlay = 1,
+  KMMediaStateFailed = 2,
+  KMMediaStatePlaying = 3,
+  KMMediaStatePaused = 4,
+};
+
 @class KMPlayerView;
 @class TKPlayerControlsView;
 @class TKMediaPlayerObserver;
@@ -236,6 +244,7 @@ SWIFT_CLASS("_TtC5KMSDK21KMMediaViewController")
 @property (nonatomic, strong) TKMediaPlayerObserver * _Nullable metadataObserver;
 @property (nonatomic) BOOL overlayWidgetsEnabled;
 @property (nonatomic) UIStatusBarStyle playerPreferredStatusBarStyle;
+@property (nonatomic) BOOL rotateButtonVisible;
 - (void)viewDidLoad;
 - (void)viewDidAppear:(BOOL)animated;
 - (void)viewWillDisappear:(BOOL)animated;

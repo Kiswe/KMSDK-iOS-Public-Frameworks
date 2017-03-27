@@ -107,9 +107,10 @@ extern NSString* const stopIdleTimerNotification;
 
 //KMSDK Variables
 extern NSString* const viewControllerDidCloseNotification;
-extern NSString* const playerStateDidChangeNotification;
 extern NSString* const statusCodePlayerStateKey;
 
+extern NSString* const playerStateDidChangeNotification;
+extern NSString* const playerStateDidChangeNotificationKey;
 extern NSString* const currentlySelectedWidgetIndexNotification;
 
 extern NSString* const playerSwitchingStreamNotification;
