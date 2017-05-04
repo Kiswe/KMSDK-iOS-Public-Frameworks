@@ -15,7 +15,9 @@
 // Singleton instance
 + (nonnull KMAPIClient *) sharedClient;
 
-@property (nonatomic, nullable, readonly) NSString* token;
+@property (nonatomic, nullable) NSString* token;
+@property (nonatomic, nonnull) NSString* apiUrlString;
+@property (nonatomic, nonnull) NSString* msgHostString;
 
 #pragma mark - Events
 
@@ -23,9 +25,5 @@
 - (void)fetchEventWithId:(nonnull NSString*)eventId
                onSuccess:(void (^ _Nonnull)(Event * _Nonnull))success
                onFailure:(void (^ _Nonnull)(void))failure;
-
-#pragma mark - Helper Methods
-
-- (void)setToken:(NSString * _Nonnull)token;
 
 @end

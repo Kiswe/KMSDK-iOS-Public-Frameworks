@@ -57,11 +57,6 @@ extern NSString* const selectedPlayerZoomFromVideoNotification;
 // Dictionary key for selected player zoom from video
 extern NSString* const selectedPlayerZoomFromVideoKey;
 
-// Should update game content container view constraint
-extern NSString* const shouldUpdateGameContentContainerViewConstraintNotification;
-// Dictionary key for constraint update
-extern NSString* const shouldUpdateGameContentContainerViewConstraintNotificationKey;
-
 // Media player
 extern NSString* const kmMediaPlayerDidDismissNotification;
 
@@ -74,7 +69,6 @@ extern NSString* const userLoggedInNotification;
 extern NSString* const userLoggedOutNotification;
 
 // Pop text bridge function
-extern NSString* const popTextInputNotification;
 extern NSString* const popTextValKey;
 extern NSString* const popTextValNotification;
 

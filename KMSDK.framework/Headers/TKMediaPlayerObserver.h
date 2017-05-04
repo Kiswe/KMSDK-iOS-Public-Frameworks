@@ -32,10 +32,9 @@
 @property (nonatomic, assign) unsigned int nascarTrackMode;
 @property CMTime lastKnownPlayTime;
 @property (assign) BOOL isRegisteredForObservers;
-@property (nonatomic, nonnull) NSString * _Nonnull(^usernameProducer)();
+@property (nonatomic, strong, nonnull) NSString *username;
 
-/// @param username username to be used for cstats error reporting
-- (nonnull instancetype)initWithUsernameProducer:(nullable NSString * _Nonnull(^)())producer;
+- (nonnull instancetype)initWithUsername:(nullable NSString *)username;
 
 - (void)setupObservers;
 - (void)removeAllObservers;
