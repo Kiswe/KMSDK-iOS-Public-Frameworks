@@ -277,6 +277,7 @@ SWIFT_CLASS("_TtC5KMSDK20KMLocalizationHelper")
 
 @class KMMediaViewController;
 enum KMMediaState : NSInteger;
+enum PlaybackState : NSInteger;
 
 SWIFT_PROTOCOL("_TtP5KMSDK25KMMediaControllerDelegate_")
 @protocol KMMediaControllerDelegate
@@ -284,6 +285,7 @@ SWIFT_PROTOCOL("_TtP5KMSDK25KMMediaControllerDelegate_")
 - (void)mediaController:(KMMediaViewController * _Nonnull)mediaController playerStateDidChange:(enum KMMediaState)newState;
 - (void)mediaController:(KMMediaViewController * _Nonnull)mediaController playerSwitchingFromStream:(NSString * _Nullable)fromStreamName toStream:(NSString * _Nullable)toStreamName;
 - (void)mediaController:(KMMediaViewController * _Nonnull)mediaController userMovedPlayheadTo:(NSString * _Nonnull)playhead;
+- (void)mediaController:(KMMediaViewController * _Nonnull)mediaController userChangedPlaybackTo:(enum PlaybackState)playbackState;
 @end
 
 @class AVPlayerItem;
@@ -550,6 +552,11 @@ SWIFT_CLASS("_TtC5KMSDK15KMWidgetContext")
 + (NSString * _Nonnull)km_createClipViewControllerWillDismissNotification SWIFT_WARN_UNUSED_RESULT;
 @end
 
+typedef SWIFT_ENUM(NSInteger, PlaybackState) {
+  PlaybackStatePlay = 0,
+  PlaybackStatePause = 1,
+};
+
 @class UIColor;
 @class NSValue;
 
@@ -740,17 +747,6 @@ SWIFT_PROTOCOL("_TtP5KMSDK29WidgetDisplayTextInputHandler_")
 @end
 
 
-SWIFT_PROTOCOL("_TtP5KMSDK31WidgetDisplaySocialShareHandler_")
-@protocol WidgetDisplaySocialShareHandler
-- (void)widgetDisplaySocialShareWithUrl:(NSURL * _Nonnull)url;
-@end
-
-
-@interface WidgetContainerViewController (SWIFT_EXTENSION(KMSDK)) <WidgetDisplaySocialShareHandler>
-- (void)widgetDisplaySocialShareWithUrl:(NSURL * _Nonnull)url;
-@end
-
-
 SWIFT_PROTOCOL("_TtP5KMSDK14WidgetDelegate_")
 @protocol WidgetDelegate
 - (void (^ _Nullable)(NSDictionary * _Nonnull, void (^ _Nullable)(id _Nullable)))widget:(Widget * _Nonnull)widget handlerForFunctionNamed:(NSString * _Nonnull)functionName SWIFT_WARN_UNUSED_RESULT;
@@ -759,6 +755,17 @@ SWIFT_PROTOCOL("_TtP5KMSDK14WidgetDelegate_")
 
 @interface WidgetContainerViewController (SWIFT_EXTENSION(KMSDK)) <WidgetDelegate>
 - (void (^ _Nullable)(NSDictionary * _Nonnull, void (^ _Nullable)(id _Nullable)))widget:(Widget * _Nonnull)widget handlerForFunctionNamed:(NSString * _Nonnull)functionName SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+SWIFT_PROTOCOL("_TtP5KMSDK31WidgetDisplaySocialShareHandler_")
+@protocol WidgetDisplaySocialShareHandler
+- (void)widgetDisplaySocialShareWithUrl:(NSURL * _Nonnull)url;
+@end
+
+
+@interface WidgetContainerViewController (SWIFT_EXTENSION(KMSDK)) <WidgetDisplaySocialShareHandler>
+- (void)widgetDisplaySocialShareWithUrl:(NSURL * _Nonnull)url;
 @end
 
 
