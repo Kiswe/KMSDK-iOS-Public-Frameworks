@@ -262,7 +262,7 @@ SWIFT_CLASS("_TtC5KMSDK26KMCreateClipViewController")
 
 @class UITextView;
 
-@interface KMCreateClipViewController (SWIFT_EXTENSION(KMSDK)) <UITextViewDelegate>
+@interface KMCreateClipViewController (SWIFT_EXTENSION(KMSDK)) <UITextViewDelegate, UIScrollViewDelegate>
 - (BOOL)textView:(UITextView * _Nonnull)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString * _Nonnull)text SWIFT_WARN_UNUSED_RESULT;
 - (void)textViewDidChangeSelection:(UITextView * _Nonnull)textView;
 @end
@@ -707,14 +707,14 @@ SWIFT_CLASS("_TtC5KMSDK6Widget")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-
-@interface Widget (SWIFT_EXTENSION(KMSDK))
-@end
-
 @class UIScrollView;
 
 @interface Widget (SWIFT_EXTENSION(KMSDK)) <UIScrollViewDelegate>
 - (UIView * _Nullable)viewForZoomingInScrollView:(UIScrollView * _Nonnull)scrollView SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+@interface Widget (SWIFT_EXTENSION(KMSDK))
 @end
 
 
@@ -733,17 +733,6 @@ SWIFT_CLASS("_TtC5KMSDK29WidgetContainerViewController")
 - (void)viewDidLayoutSubviews;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-@end
-
-
-SWIFT_PROTOCOL("_TtP5KMSDK29WidgetDisplayTextInputHandler_")
-@protocol WidgetDisplayTextInputHandler
-- (void)widgetDisplayTextInputWithInitialText:(NSString * _Nullable)initialText sendMessageCallback:(void (^ _Nonnull)(NSString * _Nonnull))sendMessageCallback;
-@end
-
-
-@interface WidgetContainerViewController (SWIFT_EXTENSION(KMSDK)) <WidgetDisplayTextInputHandler>
-- (void)widgetDisplayTextInputWithInitialText:(NSString * _Nullable)initialText sendMessageCallback:(void (^ _Nonnull)(NSString * _Nonnull))sendMessageCallback;
 @end
 
 
@@ -766,6 +755,17 @@ SWIFT_PROTOCOL("_TtP5KMSDK31WidgetDisplaySocialShareHandler_")
 
 @interface WidgetContainerViewController (SWIFT_EXTENSION(KMSDK)) <WidgetDisplaySocialShareHandler>
 - (void)widgetDisplaySocialShareWithUrl:(NSURL * _Nonnull)url;
+@end
+
+
+SWIFT_PROTOCOL("_TtP5KMSDK29WidgetDisplayTextInputHandler_")
+@protocol WidgetDisplayTextInputHandler
+- (void)widgetDisplayTextInputWithInitialText:(NSString * _Nullable)initialText sendMessageCallback:(void (^ _Nonnull)(NSString * _Nonnull))sendMessageCallback;
+@end
+
+
+@interface WidgetContainerViewController (SWIFT_EXTENSION(KMSDK)) <WidgetDisplayTextInputHandler>
+- (void)widgetDisplayTextInputWithInitialText:(NSString * _Nullable)initialText sendMessageCallback:(void (^ _Nonnull)(NSString * _Nonnull))sendMessageCallback;
 @end
 
 
