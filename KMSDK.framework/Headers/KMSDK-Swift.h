@@ -345,6 +345,7 @@ SWIFT_CLASS("_TtC5KMSDK21KMMediaViewController")
 @property (nonatomic) UIStatusBarStyle playerPreferredStatusBarStyle;
 @property (nonatomic) BOOL rotateButtonVisible;
 @property (nonatomic) BOOL playerControlsVisible;
+@property (nonatomic) BOOL playerOverlaysVisible;
 - (void)viewDidLoad;
 - (void)viewDidAppear:(BOOL)animated;
 - (void)viewWillDisappear:(BOOL)animated;
