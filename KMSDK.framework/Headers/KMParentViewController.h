@@ -25,4 +25,6 @@
 
 @property (nonatomic, strong, nullable) NSString *username;
 
+-(void)reloadEvent:(NSString * _Nonnull)eventId;
+
 @end

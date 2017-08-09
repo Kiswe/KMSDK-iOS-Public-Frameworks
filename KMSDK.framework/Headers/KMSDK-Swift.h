@@ -323,6 +323,7 @@ typedef SWIFT_ENUM(NSInteger, KMMediaState) {
 };
 
 @class TKPlayerControlsView;
+@class KMParentViewController;
 @class TKMediaPlayerObserver;
 
 SWIFT_CLASS("_TtC5KMSDK21KMMediaViewController")
@@ -339,6 +340,7 @@ SWIFT_CLASS("_TtC5KMSDK21KMMediaViewController")
 @property (nonatomic) CMTime playerSeekTolerance;
 @property (nonatomic, strong) KMAVPlayerObserver * _Nullable observer;
 @property (nonatomic, copy) NSString * _Nullable username;
+@property (nonatomic, weak) KMParentViewController * _Nullable parentVC;
 @property (nonatomic, copy) NSString * _Nullable overlayWidgetToken;
 @property (nonatomic, strong) TKMediaPlayerObserver * _Nullable metadataObserver;
 @property (nonatomic) BOOL overlayWidgetsEnabled;
@@ -434,11 +436,6 @@ SWIFT_PROTOCOL("_TtP5KMSDK17VideoControllable_")
 @end
 
 
-@interface KMMediaViewController (SWIFT_EXTENSION(KMSDK))
-- (void)postMediaPlayerShouldReloadNotification;
-@end
-
-
 @interface KMMediaViewController (SWIFT_EXTENSION(KMSDK)) <TKPlayerControlsViewDelegate>
 - (void)controlsViewDidPressBack:(TKPlayerControlsView * _Null_unspecified)controlsView;
 - (void)controlsViewDidPressPlay:(TKPlayerControlsView * _Null_unspecified)controlsView;
@@ -454,6 +451,11 @@ SWIFT_PROTOCOL("_TtP5KMSDK17VideoControllable_")
 - (void)controlsViewDidPressPipToggleHidePips:(TKPlayerControlsView * _Null_unspecified)controlsView;
 - (void)controlsViewDidPressPipToggleShowPips:(TKPlayerControlsView * _Null_unspecified)controlsView;
 - (void)controlsViewDidPressRotate:(TKPlayerControlsView * _Null_unspecified)controlsView;
+@end
+
+
+@interface KMMediaViewController (SWIFT_EXTENSION(KMSDK))
+- (void)postMediaPlayerShouldReloadNotification;
 @end
 
 @class UIGestureRecognizer;
@@ -508,7 +510,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) KMSDK * _Non
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 @end
 
-@class KMParentViewController;
 
 @interface KMSDK (SWIFT_EXTENSION(KMSDK))
 - (void)parentViewControllerWithEventId:(NSString * _Nonnull)eventId username:(NSString * _Nullable)username completion:(void (^ _Nonnull)(KMParentViewController * _Nullable))completion;
