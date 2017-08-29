@@ -348,6 +348,7 @@ SWIFT_CLASS("_TtC5KMSDK21KMMediaViewController")
 @property (nonatomic) BOOL rotateButtonVisible;
 @property (nonatomic) BOOL playerControlsVisible;
 @property (nonatomic) BOOL playerOverlaysVisible;
+@property (nonatomic) BOOL restartsPlaybackWhenAudioRouteChanges;
 - (void)viewDidLoad;
 - (void)viewDidAppear:(BOOL)animated;
 - (void)viewWillDisappear:(BOOL)animated;
@@ -453,11 +454,6 @@ SWIFT_PROTOCOL("_TtP5KMSDK17VideoControllable_")
 - (void)controlsViewDidPressRotate:(TKPlayerControlsView * _Null_unspecified)controlsView;
 @end
 
-
-@interface KMMediaViewController (SWIFT_EXTENSION(KMSDK))
-- (void)postMediaPlayerShouldReloadNotification;
-@end
-
 @class UIGestureRecognizer;
 
 @interface KMMediaViewController (SWIFT_EXTENSION(KMSDK))
@@ -466,6 +462,11 @@ SWIFT_PROTOCOL("_TtP5KMSDK17VideoControllable_")
 - (void)playerView:(KMPlayerView * _Nonnull)playerView didReceiveTap:(UIGestureRecognizer * _Nonnull)sender;
 - (void)playerView:(KMPlayerView * _Nonnull)playerView didReceiveTapAt:(CGPoint)location;
 - (void)playerView:(KMPlayerView * _Nonnull)playerView didObserveIsPlaying:(BOOL)isPlaying;
+@end
+
+
+@interface KMMediaViewController (SWIFT_EXTENSION(KMSDK))
+- (void)postMediaPlayerShouldReloadNotification;
 @end
 
 

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'KMSDK'
-  s.version          = '2.1.7'
+  s.version          = '2.1.8'
   s.summary          = 'Kiswe iOS SDK'
 
 # This description is used to generate tags and improve search results.
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-Kiswe iOS SDK
+Kiswe iOS SDK Framework
                        DESC
 
   s.homepage         = 'http://developer.kiswe.com/'
