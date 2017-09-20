@@ -7,4 +7,5 @@ framework module RTArchiver {
 
 module RTArchiver.Swift {
     header "RTArchiver-Swift.h"
+    requires objc
 }

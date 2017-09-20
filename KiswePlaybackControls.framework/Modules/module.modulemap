@@ -7,4 +7,5 @@ framework module KiswePlaybackControls {
 
 module KiswePlaybackControls.Swift {
     header "KiswePlaybackControls-Swift.h"
+    requires objc
 }
