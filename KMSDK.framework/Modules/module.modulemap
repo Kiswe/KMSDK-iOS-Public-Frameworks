@@ -1,5 +1,5 @@
 framework module KMSDK {
-  umbrella header "KMSDK-Private-umbrella.h"
+  umbrella header "KMSDK-umbrella.h"
 
   export *
   module * { export * }
