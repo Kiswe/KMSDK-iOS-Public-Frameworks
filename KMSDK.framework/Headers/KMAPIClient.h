@@ -23,7 +23,7 @@
 
 // KMSDK: Needed for getting event details
 - (void)fetchEventWithId:(nonnull NSString*)eventId
-               onSuccess:(void (^ _Nonnull)(__weak Event* _Nonnull))success
+               onSuccess:(void (^ _Nonnull)(__unsafe_unretained Event* _Nonnull))success
                onFailure:(void (^ _Nonnull)(void))failure;
 
 - (void)checkFailoverWithId:(nonnull NSString*)eventId dataServer:(NSString* _Nonnull)dataServer
