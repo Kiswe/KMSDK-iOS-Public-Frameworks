@@ -290,14 +290,14 @@ SWIFT_CLASS("_TtC5KMSDK26KMCreateClipViewController")
 
 
 
-
-
 @class KMPlayerView;
 
 @interface KMCreateClipViewController (SWIFT_EXTENSION(KMSDK))
 - (void)playerViewDidPlayToEndTimeWithPlayerView:(KMPlayerView * _Nonnull)playerView;
 - (void)playerView:(KMPlayerView * _Nonnull)playerView didObserveItemStatus:(AVPlayerItemStatus)status;
 @end
+
+
 
 @class UITextView;
 
@@ -361,6 +361,7 @@ typedef SWIFT_ENUM(NSInteger, KMMediaState) {
   KMMediaStatePaused = 4,
 };
 
+@protocol WidgetDelegate;
 @class TKPlayerControlsView;
 @class KMParentViewController;
 @class TKMediaPlayerObserver;
@@ -372,6 +373,7 @@ SWIFT_CLASS("_TtC5KMSDK21KMMediaViewController")
 @property (nonatomic, strong) KMPlayerView * _Nullable playerView;
 @property (nonatomic, strong) KMPlayerView * _Nullable alternatePlayerView;
 @property (nonatomic, weak) id <KMMediaControllerDelegate> _Nullable delegate;
+@property (nonatomic, weak) id <WidgetDelegate> _Nullable widgetDelegate;
 @property (nonatomic, readonly) BOOL shouldUseRealTimeArchive;
 @property (nonatomic, strong) TKPlayerControlsView * _Nonnull playerControls;
 @property (nonatomic) BOOL playerControlsIdleTimerEnabled;
@@ -401,6 +403,18 @@ SWIFT_CLASS("_TtC5KMSDK21KMMediaViewController")
 
 @interface KMMediaViewController (SWIFT_EXTENSION(KMSDK))
 - (void)playerObserver:(KMAVPlayerObserver * _Nonnull)observer periodicTimeObserverObservedPlayer:(AVPlayer * _Nonnull)player;
+@end
+
+@class Widget;
+
+SWIFT_PROTOCOL("_TtP5KMSDK14WidgetDelegate_")
+@protocol WidgetDelegate
+- (void (^ _Nullable)(NSDictionary * _Nonnull, void (^ _Nullable)(id _Nullable)))widget:(Widget * _Nonnull)widget handlerForFunctionNamed:(NSString * _Nonnull)functionName SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+@interface KMMediaViewController (SWIFT_EXTENSION(KMSDK)) <WidgetDelegate>
+- (void (^ _Nullable)(NSDictionary * _Nonnull, void (^ _Nullable)(id _Nullable)))widget:(Widget * _Nonnull)widget handlerForFunctionNamed:(NSString * _Nonnull)functionName SWIFT_WARN_UNUSED_RESULT;
 @end
 
 
@@ -718,7 +732,6 @@ SWIFT_CLASS("_TtC5KMSDK20TKInterfaceUtilities")
 
 
 
-@protocol WidgetDelegate;
 
 SWIFT_CLASS("_TtC5KMSDK6Widget")
 @interface Widget : UIView
@@ -737,13 +750,13 @@ SWIFT_CLASS("_TtC5KMSDK6Widget")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-
-
 @class UIScrollView;
 
 @interface Widget (SWIFT_EXTENSION(KMSDK)) <UIScrollViewDelegate>
 - (UIView * _Nullable)viewForZoomingInScrollView:(UIScrollView * _Nonnull)scrollView SWIFT_WARN_UNUSED_RESULT;
 @end
+
+
 
 
 
@@ -773,17 +786,6 @@ SWIFT_PROTOCOL("_TtP5KMSDK29WidgetDisplayTextInputHandler_")
 @end
 
 
-SWIFT_PROTOCOL("_TtP5KMSDK14WidgetDelegate_")
-@protocol WidgetDelegate
-- (void (^ _Nullable)(NSDictionary * _Nonnull, void (^ _Nullable)(id _Nullable)))widget:(Widget * _Nonnull)widget handlerForFunctionNamed:(NSString * _Nonnull)functionName SWIFT_WARN_UNUSED_RESULT;
-@end
-
-
-@interface WidgetContainerViewController (SWIFT_EXTENSION(KMSDK)) <WidgetDelegate>
-- (void (^ _Nullable)(NSDictionary * _Nonnull, void (^ _Nullable)(id _Nullable)))widget:(Widget * _Nonnull)widget handlerForFunctionNamed:(NSString * _Nonnull)functionName SWIFT_WARN_UNUSED_RESULT;
-@end
-
-
 SWIFT_PROTOCOL("_TtP5KMSDK31WidgetDisplaySocialShareHandler_")
 @protocol WidgetDisplaySocialShareHandler
 - (void)widgetDisplaySocialShareWithUrl:(NSURL * _Nonnull)url;
@@ -792,6 +794,11 @@ SWIFT_PROTOCOL("_TtP5KMSDK31WidgetDisplaySocialShareHandler_")
 
 @interface WidgetContainerViewController (SWIFT_EXTENSION(KMSDK)) <WidgetDisplaySocialShareHandler>
 - (void)widgetDisplaySocialShareWithUrl:(NSURL * _Nonnull)url;
+@end
+
+
+@interface WidgetContainerViewController (SWIFT_EXTENSION(KMSDK)) <WidgetDelegate>
+- (void (^ _Nullable)(NSDictionary * _Nonnull, void (^ _Nullable)(id _Nullable)))widget:(Widget * _Nonnull)widget handlerForFunctionNamed:(NSString * _Nonnull)functionName SWIFT_WARN_UNUSED_RESULT;
 @end
 
 
