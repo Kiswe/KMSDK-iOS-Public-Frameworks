@@ -32,7 +32,7 @@ Kiswe iOS SDK Framework
   s.dependency 'CocoaLumberjack', '~> 3.2.1'
   s.dependency 'CocoaLumberjack/Swift', '~> 3.2.1'
   s.dependency 'AFNetworking', '~> 3.1.0'
-  s.dependency 'SlackTextViewController', '~> 1.9.5'
+  s.dependency 'SlackTextViewController', '1.9.5'
   s.frameworks = 'UIKit', 'AVFoundation', 'WebKit'
   s.vendored_frameworks = 'KMSDK.framework', 'RTArchiver.framework', 'KiswePlaybackControls.framework'
 end
