@@ -359,6 +359,7 @@ typedef SWIFT_ENUM(NSInteger, KMMediaState) {
   KMMediaStateFailed = 2,
   KMMediaStatePlaying = 3,
   KMMediaStatePaused = 4,
+  KMMediaStateGeoblocked = 5,
 };
 
 @protocol WidgetDelegate;
