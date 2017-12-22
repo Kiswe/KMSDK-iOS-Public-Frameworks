@@ -34,8 +34,6 @@ static const DDLogLevel ddLogLevel = DDLogLevelOff;
 
 #pragma mark - Notification string constants
 
-// Stats were changed
-extern NSString* const statsChangeNotification;
 // Metadata updated
 extern NSString* const metadataNotification;
 // Dictionary key for updated stats epoch
