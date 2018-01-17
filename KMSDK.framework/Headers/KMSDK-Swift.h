@@ -375,6 +375,7 @@ SWIFT_CLASS("_TtC5KMSDK21KMMediaViewController")
 @property (nonatomic, strong) KMPlayerView * _Nullable alternatePlayerView;
 @property (nonatomic, weak) id <KMMediaControllerDelegate> _Nullable delegate;
 @property (nonatomic, weak) id <WidgetDelegate> _Nullable widgetDelegate;
+@property (nonatomic) BOOL realTimeArchiveEnabled;
 @property (nonatomic, readonly) BOOL shouldUseRealTimeArchive;
 @property (nonatomic, strong) TKPlayerControlsView * _Nonnull playerControls;
 @property (nonatomic) BOOL playerControlsIdleTimerEnabled;
