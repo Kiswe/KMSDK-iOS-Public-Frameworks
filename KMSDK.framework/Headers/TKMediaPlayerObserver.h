@@ -16,10 +16,10 @@
 
 @interface TKMediaPlayerObserver : NSObject
 
-@property (readwrite, assign, nullable) AVPlayer* mPlayer;
-@property (nonatomic, assign, nullable) KMPlayerView *mPlayerView;
-@property (nonatomic, assign, nullable) TKPlayerControlsView *mPlayerControls;
-@property (nonatomic, assign, nullable) Event *event;
+@property (readwrite, weak, nullable) AVPlayer* mPlayer;
+@property (nonatomic, weak, nullable) KMPlayerView *mPlayerView;
+@property (nonatomic, weak, nullable) TKPlayerControlsView *mPlayerControls;
+@property (nonatomic, weak, nullable) Event *event;
 @property (nonatomic, strong, nullable) NSMutableDictionary *overlayObjects;
 @property (assign) BOOL disableDrawing;
 @property (nonatomic, readonly) unsigned int lastMediaEpoch;
