@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'KMSDK'
-  s.version          = '2.2.15'
+  s.version          = '2.3.0'
   s.summary          = 'Kiswe iOS SDK'
 
 # This description is used to generate tags and improve search results.
