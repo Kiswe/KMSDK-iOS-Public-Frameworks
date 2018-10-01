@@ -2,8 +2,13 @@
 
 ## Requirements
 
+For version 2.2.x 
 - iOS 9.0+
-- Xcode 8.3+/Swift 3.1 (use branch `xcode-8.2.1` if you need support for Xcode 8.2/Swift 3.0)
+- Xcode 8.3+/Swift 3.1 
+
+Alternate versions
+- Use branch `xcode-8.2.1` if you need support for Xcode 8.2/Swift 3.0
+- Use branch `xcode-10` (version 2.3.x) if you need support for Xcode 10
 
 ## Installation
 

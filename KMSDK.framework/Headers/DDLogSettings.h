@@ -6,31 +6,7 @@
 //
 //
 
-#define LOG_LEVEL_DEF ddLogLevel
-#define LOG_ASYNC_ENABLED YES
 #import <Foundation/Foundation.h>
-#import <CocoaLumberjack/CocoaLumberjack.h>
-
-/*
- Levels:
- LOG_LEVEL_VERBOSE
- LOG_LEVEL_DEBUG
- LOG_LEVEL_INFO
- LOG_LEVEL_WARNING
- LOG_LEVEL_ERROR
- 
- DDLogVerbose
- DDLogDebug
- DDLogInfo
- DDLogWarning
- DDLogError
- */
-
-#ifdef DEBUG
-static const DDLogLevel ddLogLevel = DDLogLevelVerbose;
-#else
-static const DDLogLevel ddLogLevel = DDLogLevelOff;
-#endif
 
 #pragma mark - Notification string constants
 
@@ -124,7 +100,5 @@ typedef NS_ENUM(NSInteger, TKEventTimePeriod) {
 @interface DDLogSettings : NSObject
 
 #pragma mark - Class Methods
-
-+(void)setupLoggingForApplication;
 
 @end
