@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'KMSDK'
-  s.version          = '2.3.1'
+  s.version          = '2.3.2'
   s.summary          = 'Kiswe iOS SDK'
 
 # This description is used to generate tags and improve search results.
@@ -29,8 +29,6 @@ Kiswe iOS SDK Framework
   s.ios.deployment_target = '9.0'
 
   s.dependency 'WebViewJavascriptBridge', '~> 6.0.2'
-  s.dependency 'CocoaLumberjack', '~> 3.2.1'
-  s.dependency 'CocoaLumberjack/Swift', '~> 3.2.1'
   s.dependency 'AFNetworking', '~> 3.1.0'
   s.dependency 'SlackTextViewController', '1.9.5'
   s.frameworks = 'UIKit', 'AVFoundation', 'WebKit'
