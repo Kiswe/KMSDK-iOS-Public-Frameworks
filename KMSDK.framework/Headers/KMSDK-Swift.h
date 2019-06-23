@@ -302,7 +302,12 @@ SWIFT_PROTOCOL("_TtP5KMSDK25KMMediaControllerDelegate_")
 SWIFT_CLASS("_TtC5KMSDK19KMMediaPlayerHelper")
 @interface KMMediaPlayerHelper : NSObject
 + (NSString * _Nullable)playlistStringForVideoName:(NSString * _Nonnull)name event:(Event * _Nonnull)event SWIFT_WARN_UNUSED_RESULT;
++ (NSString * _Nullable)highVariantPlaylistStringForVideoName:(NSString * _Nonnull)name event:(Event * _Nonnull)event SWIFT_WARN_UNUSED_RESULT;
++ (NSString * _Nullable)lowVariantPlaylistStringForVideoName:(NSString * _Nonnull)name event:(Event * _Nonnull)event SWIFT_WARN_UNUSED_RESULT;
++ (NSString * _Nullable)verylowVariantPlaylistStringForVideoName:(NSString * _Nonnull)name event:(Event * _Nonnull)event SWIFT_WARN_UNUSED_RESULT;
 + (NSString * _Nullable)vodHighVariantPlaylistStringForVideoName:(NSString * _Nonnull)name event:(Event * _Nonnull)event SWIFT_WARN_UNUSED_RESULT;
++ (NSString * _Nullable)vodLowVariantPlaylistStringForVideoName:(NSString * _Nonnull)name event:(Event * _Nonnull)event SWIFT_WARN_UNUSED_RESULT;
++ (NSString * _Nullable)vodVerylowVariantPlaylistStringForVideoName:(NSString * _Nonnull)name event:(Event * _Nonnull)event SWIFT_WARN_UNUSED_RESULT;
 + (NSString * _Nullable)currentVideoURLForPlayerItem:(AVPlayerItem * _Nonnull)playerItem SWIFT_WARN_UNUSED_RESULT;
 + (BOOL)urlIsMixStream:(NSURL * _Nonnull)url SWIFT_WARN_UNUSED_RESULT;
 + (NSString * _Nullable)videoNameFromURL:(NSURL * _Nonnull)url SWIFT_WARN_UNUSED_RESULT;
@@ -320,6 +325,7 @@ typedef SWIFT_ENUM(NSInteger, KMMediaState, closed) {
 
 @class KMPlayerView;
 @protocol WidgetDelegate;
+@class NSLayoutConstraint;
 @class TKPlayerControlsView;
 @class KMParentViewController;
 @class TKMediaPlayerObserver;
@@ -330,6 +336,7 @@ SWIFT_CLASS("_TtC5KMSDK21KMMediaViewController")
 @property (nonatomic, strong) Event * _Nullable event;
 @property (nonatomic, strong) KMPlayerView * _Nullable playerView;
 @property (nonatomic, weak) id <WidgetDelegate> _Nullable widgetDelegate;
+@property (nonatomic, weak) NSLayoutConstraint * _Nullable playerControlsBottomConstraint;
 @property (nonatomic, strong) TKPlayerControlsView * _Nonnull playerControls;
 @property (nonatomic, copy) NSString * _Nullable username;
 @property (nonatomic, weak) KMParentViewController * _Nullable parentVC;
@@ -955,7 +962,12 @@ SWIFT_PROTOCOL("_TtP5KMSDK25KMMediaControllerDelegate_")
 SWIFT_CLASS("_TtC5KMSDK19KMMediaPlayerHelper")
 @interface KMMediaPlayerHelper : NSObject
 + (NSString * _Nullable)playlistStringForVideoName:(NSString * _Nonnull)name event:(Event * _Nonnull)event SWIFT_WARN_UNUSED_RESULT;
++ (NSString * _Nullable)highVariantPlaylistStringForVideoName:(NSString * _Nonnull)name event:(Event * _Nonnull)event SWIFT_WARN_UNUSED_RESULT;
++ (NSString * _Nullable)lowVariantPlaylistStringForVideoName:(NSString * _Nonnull)name event:(Event * _Nonnull)event SWIFT_WARN_UNUSED_RESULT;
++ (NSString * _Nullable)verylowVariantPlaylistStringForVideoName:(NSString * _Nonnull)name event:(Event * _Nonnull)event SWIFT_WARN_UNUSED_RESULT;
 + (NSString * _Nullable)vodHighVariantPlaylistStringForVideoName:(NSString * _Nonnull)name event:(Event * _Nonnull)event SWIFT_WARN_UNUSED_RESULT;
++ (NSString * _Nullable)vodLowVariantPlaylistStringForVideoName:(NSString * _Nonnull)name event:(Event * _Nonnull)event SWIFT_WARN_UNUSED_RESULT;
++ (NSString * _Nullable)vodVerylowVariantPlaylistStringForVideoName:(NSString * _Nonnull)name event:(Event * _Nonnull)event SWIFT_WARN_UNUSED_RESULT;
 + (NSString * _Nullable)currentVideoURLForPlayerItem:(AVPlayerItem * _Nonnull)playerItem SWIFT_WARN_UNUSED_RESULT;
 + (BOOL)urlIsMixStream:(NSURL * _Nonnull)url SWIFT_WARN_UNUSED_RESULT;
 + (NSString * _Nullable)videoNameFromURL:(NSURL * _Nonnull)url SWIFT_WARN_UNUSED_RESULT;
@@ -973,6 +985,7 @@ typedef SWIFT_ENUM(NSInteger, KMMediaState, closed) {
 
 @class KMPlayerView;
 @protocol WidgetDelegate;
+@class NSLayoutConstraint;
 @class TKPlayerControlsView;
 @class KMParentViewController;
 @class TKMediaPlayerObserver;
@@ -983,6 +996,7 @@ SWIFT_CLASS("_TtC5KMSDK21KMMediaViewController")
 @property (nonatomic, strong) Event * _Nullable event;
 @property (nonatomic, strong) KMPlayerView * _Nullable playerView;
 @property (nonatomic, weak) id <WidgetDelegate> _Nullable widgetDelegate;
+@property (nonatomic, weak) NSLayoutConstraint * _Nullable playerControlsBottomConstraint;
 @property (nonatomic, strong) TKPlayerControlsView * _Nonnull playerControls;
 @property (nonatomic, copy) NSString * _Nullable username;
 @property (nonatomic, weak) KMParentViewController * _Nullable parentVC;
