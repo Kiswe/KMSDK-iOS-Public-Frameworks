@@ -8,8 +8,9 @@
 
 // Framework
 #import <UIKit/UIKit.h>
-#import <QuartzCore/QuartzCore.h> 
+#import <QuartzCore/QuartzCore.h>
 #import <AVFoundation/AVFoundation.h>
+#import <MediaPlayer/MediaPlayer.h>
 
 @class TKPlayerControlsView;
 @class TKControlBarView;
@@ -54,14 +55,14 @@ extern NSString* const TK_playerControlsViewDidHideControlsNotification;
 @optional
 
 // Callback methods for controls buttons
-- (void)controlsViewDidPressPause:(TKPlayerControlsView*)controlsView;
-- (void)controlsViewDidPressPlay:(TKPlayerControlsView*)controlsView;
-- (void)controlsViewDidPressSkipBack:(TKPlayerControlsView*)controlsView;
+- (MPRemoteCommandHandlerStatus)controlsViewDidPressPause:(TKPlayerControlsView*)controlsView;
+- (MPRemoteCommandHandlerStatus)controlsViewDidPressPlay:(TKPlayerControlsView*)controlsView;
+- (MPRemoteCommandHandlerStatus)controlsViewDidPressSkipBack:(TKPlayerControlsView*)controlsView;
 - (void)controlsViewDidPressGoLive:(TKPlayerControlsView*)controlsView;
 - (void)controlsViewDidPressExpandView:(TKPlayerControlsView*)controlsView;
 - (void)controlsViewDidPressMixView:(TKPlayerControlsView*)controlsView;
 - (void)controlsViewDidPressBack:(TKPlayerControlsView*)controlsView;
-- (void)controlsViewDidPressSkipForward:(TKPlayerControlsView*)controlsView;
+- (MPRemoteCommandHandlerStatus)controlsViewDidPressSkipForward:(TKPlayerControlsView*)controlsView;
 - (void)controlsViewDidPressRotate:(TKPlayerControlsView*)controlsView;
 - (void)controlsView:(TKPlayerControlsView*)controlsView didPressCameraSelectorAtIndex:(NSInteger)index;
 - (void)controlsViewDidPressTeamSelectorHome:(TKPlayerControlsView*)controlsView;

@@ -188,6 +188,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @import CoreMedia;
 @import Foundation;
 @import KiswePlaybackControls;
+@import MediaPlayer;
 @import ObjectiveC;
 @import UIKit;
 #endif
@@ -427,8 +428,8 @@ SWIFT_PROTOCOL("_TtP5KMSDK23MediaPlayerInfoProvider_")
 
 
 @interface KMMediaViewController (SWIFT_EXTENSION(KMSDK))
-- (void)pauseVideo;
-- (void)playVideo;
+- (MPRemoteCommandHandlerStatus)pauseVideo SWIFT_WARN_UNUSED_RESULT;
+- (MPRemoteCommandHandlerStatus)playVideo SWIFT_WARN_UNUSED_RESULT;
 - (void)reloadVideoWithSeekToCurrentTime:(BOOL)seekToCurrentTime;
 - (void)setStreamWithNamed:(NSString * _Nonnull)name videoOrientation:(NSString * _Nonnull)videoOrientation;
 - (void)setPlayheadTo:(double)timeInSeconds;
@@ -439,11 +440,11 @@ SWIFT_PROTOCOL("_TtP5KMSDK23MediaPlayerInfoProvider_")
 
 @interface KMMediaViewController (SWIFT_EXTENSION(KMSDK)) <TKPlayerControlsViewDelegate>
 - (void)controlsViewDidPressBack:(TKPlayerControlsView * _Null_unspecified)controlsView;
-- (void)controlsViewDidPressPlay:(TKPlayerControlsView * _Null_unspecified)controlsView;
-- (void)controlsViewDidPressPause:(TKPlayerControlsView * _Null_unspecified)controlsView;
+- (MPRemoteCommandHandlerStatus)controlsViewDidPressPlay:(TKPlayerControlsView * _Null_unspecified)controlsView SWIFT_WARN_UNUSED_RESULT;
+- (MPRemoteCommandHandlerStatus)controlsViewDidPressPause:(TKPlayerControlsView * _Null_unspecified)controlsView SWIFT_WARN_UNUSED_RESULT;
 - (void)controlsViewDidPressGoLive:(TKPlayerControlsView * _Null_unspecified)controlsView;
-- (void)controlsViewDidPressSkipBack:(TKPlayerControlsView * _Null_unspecified)controlsView;
-- (void)controlsViewDidPressSkipForward:(TKPlayerControlsView * _Null_unspecified)controlsView;
+- (MPRemoteCommandHandlerStatus)controlsViewDidPressSkipBack:(TKPlayerControlsView * _Null_unspecified)controlsView SWIFT_WARN_UNUSED_RESULT;
+- (MPRemoteCommandHandlerStatus)controlsViewDidPressSkipForward:(TKPlayerControlsView * _Null_unspecified)controlsView SWIFT_WARN_UNUSED_RESULT;
 - (void)controlsViewWillHideControls:(TKPlayerControlsView * _Null_unspecified)controlsView;
 - (void)controlsViewWillShowControls:(TKPlayerControlsView * _Null_unspecified)controlsView;
 - (void)controlsView:(TKPlayerControlsView * _Null_unspecified)controlsView sliderDidBeginDraggingAtValue:(float)value;
@@ -861,6 +862,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @import CoreMedia;
 @import Foundation;
 @import KiswePlaybackControls;
+@import MediaPlayer;
 @import ObjectiveC;
 @import UIKit;
 #endif
@@ -1100,8 +1102,8 @@ SWIFT_PROTOCOL("_TtP5KMSDK23MediaPlayerInfoProvider_")
 
 
 @interface KMMediaViewController (SWIFT_EXTENSION(KMSDK))
-- (void)pauseVideo;
-- (void)playVideo;
+- (MPRemoteCommandHandlerStatus)pauseVideo SWIFT_WARN_UNUSED_RESULT;
+- (MPRemoteCommandHandlerStatus)playVideo SWIFT_WARN_UNUSED_RESULT;
 - (void)reloadVideoWithSeekToCurrentTime:(BOOL)seekToCurrentTime;
 - (void)setStreamWithNamed:(NSString * _Nonnull)name videoOrientation:(NSString * _Nonnull)videoOrientation;
 - (void)setPlayheadTo:(double)timeInSeconds;
@@ -1112,11 +1114,11 @@ SWIFT_PROTOCOL("_TtP5KMSDK23MediaPlayerInfoProvider_")
 
 @interface KMMediaViewController (SWIFT_EXTENSION(KMSDK)) <TKPlayerControlsViewDelegate>
 - (void)controlsViewDidPressBack:(TKPlayerControlsView * _Null_unspecified)controlsView;
-- (void)controlsViewDidPressPlay:(TKPlayerControlsView * _Null_unspecified)controlsView;
-- (void)controlsViewDidPressPause:(TKPlayerControlsView * _Null_unspecified)controlsView;
+- (MPRemoteCommandHandlerStatus)controlsViewDidPressPlay:(TKPlayerControlsView * _Null_unspecified)controlsView SWIFT_WARN_UNUSED_RESULT;
+- (MPRemoteCommandHandlerStatus)controlsViewDidPressPause:(TKPlayerControlsView * _Null_unspecified)controlsView SWIFT_WARN_UNUSED_RESULT;
 - (void)controlsViewDidPressGoLive:(TKPlayerControlsView * _Null_unspecified)controlsView;
-- (void)controlsViewDidPressSkipBack:(TKPlayerControlsView * _Null_unspecified)controlsView;
-- (void)controlsViewDidPressSkipForward:(TKPlayerControlsView * _Null_unspecified)controlsView;
+- (MPRemoteCommandHandlerStatus)controlsViewDidPressSkipBack:(TKPlayerControlsView * _Null_unspecified)controlsView SWIFT_WARN_UNUSED_RESULT;
+- (MPRemoteCommandHandlerStatus)controlsViewDidPressSkipForward:(TKPlayerControlsView * _Null_unspecified)controlsView SWIFT_WARN_UNUSED_RESULT;
 - (void)controlsViewWillHideControls:(TKPlayerControlsView * _Null_unspecified)controlsView;
 - (void)controlsViewWillShowControls:(TKPlayerControlsView * _Null_unspecified)controlsView;
 - (void)controlsView:(TKPlayerControlsView * _Null_unspecified)controlsView sliderDidBeginDraggingAtValue:(float)value;
