@@ -1,0 +1,66 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.1.2 effective-4.2 (swiftlang-1100.0.278 clang-1100.0.33.9)
+// swift-module-flags: -target x86_64-apple-ios10.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 4.2 -enforce-exclusivity=checked -O -module-name RTArchiver
+import AVFoundation
+import Foundation
+import MobileCoreServices
+@_exported import RTArchiver
+import Swift
+import UIKit
+public protocol RTAManifestGeneratorDelegate : AnyObject {
+  func manifestGenerator(_ manifestGenerator: RTArchiver.RTAManifestGenerator, didOutputPlaylistData playlistData: Foundation.Data, isVariantPlaylist: Swift.Bool, error: Swift.Error?)
+}
+public class RTAManifestGenerator : Swift.Equatable {
+  public func handleFetchedPlaylistData(_ fetchedPlaylistData: Foundation.Data)
+  @objc deinit
+}
+public struct PlaylistTags {
+  public static let EndList: Swift.String
+  public static let TrackInfo: Swift.String
+  public static let FileHeader: Swift.String
+  public static let PlaylistTypeVOD: Swift.String
+  public static let PlaylistTypeEvent: Swift.String
+  public static let VariantStream: Swift.String
+  public static let TargetDuration: Swift.String
+  public static let MediaSequence: Swift.String
+  public static let ProgramDateTime: Swift.String
+  public static let AllowCache: Swift.String
+  public static let Version: Swift.String
+}
+public enum PlaylistError : Swift.Error {
+  case emptyPlaylist
+  public static func == (a: RTArchiver.PlaylistError, b: RTArchiver.PlaylistError) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+public func == (lhs: RTArchiver.RTAManifestGenerator, rhs: RTArchiver.RTAManifestGenerator) -> Swift.Bool
+@objc public class RTAResourceLoaderDelegate : ObjectiveC.NSObject, AVFoundation.AVAssetResourceLoaderDelegate {
+  public var customScheme: Swift.String?
+  public var encryptScheme: Swift.String?
+  public var mediaEncryptKey: Swift.String?
+  public var lastRequestedPlaylist: Foundation.URL?
+  @objc deinit
+  @objc open func resourceLoader(_ resourceLoader: AVFoundation.AVAssetResourceLoader, shouldWaitForLoadingOfRequestedResource loadingRequest: AVFoundation.AVAssetResourceLoadingRequest) -> Swift.Bool
+  @objc open func resourceLoader(_ resourceLoader: AVFoundation.AVAssetResourceLoader, didCancel loadingRequest: AVFoundation.AVAssetResourceLoadingRequest)
+  public func setVODVariant(_ vodVariant: Swift.String, forLiveVariant liveVariant: Swift.String)
+  open func addVariantKeys(_ keys: [Swift.String])
+  @objc override dynamic public init()
+}
+public struct RTASchemeHelper {
+  public static func urlWithCustomScheme(_ url: Foundation.URL, scheme: Swift.String) -> Foundation.URL?
+}
+public enum RTARequestURLType {
+  case transportStream
+  case playlist
+  public static func == (a: RTArchiver.RTARequestURLType, b: RTArchiver.RTARequestURLType) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+extension RTArchiver.PlaylistError : Swift.Equatable {}
+extension RTArchiver.PlaylistError : Swift.Hashable {}
+extension RTArchiver.RTARequestURLType : Swift.Equatable {}
+extension RTArchiver.RTARequestURLType : Swift.Hashable {}

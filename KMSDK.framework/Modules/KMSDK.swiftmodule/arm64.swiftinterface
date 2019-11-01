@@ -1,0 +1,704 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.1.2 effective-4.2 (swiftlang-1100.0.278 clang-1100.0.33.9)
+// swift-module-flags: -target arm64-apple-ios10.0 -enable-objc-interop -enable-library-evolution -swift-version 4.2 -enforce-exclusivity=checked -O -module-name KMSDK
+import AFNetworking
+import AVFoundation
+import CoreGraphics
+import Foundation
+@_exported import KMSDK
+import KiswePlaybackControls
+import MediaPlayer
+import RTArchiver
+import Swift
+import UIKit
+import WebViewJavascriptBridge
+public typealias BridgeFunctionHandler = ([Swift.AnyHashable : Any], ((Any?) -> Swift.Void)?) -> Swift.Void
+@objc public protocol MediaPlayerInfoProvider : AnyObject {
+  @objc var currentStream: Swift.String? { get }
+  @objc var currentEpoch: Foundation.NSNumber? { get }
+  @objc var currentTime: Foundation.NSNumber? { get }
+  @objc func setPlayhead(to: Swift.Double)
+  @objc func setStream(named streamName: Swift.String, videoOrientation: Swift.String)
+}
+@objc public class ClipInfo : ObjectiveC.NSObject {
+  @objc final public let startTime: Swift.Double
+  @objc final public let endTime: Swift.Double
+  @objc final public let stream: Swift.String?
+  @objc final public let text: Swift.String?
+  public init(startTime: Swift.Double, endTime: Swift.Double, stream: Swift.String?, text: Swift.String?)
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension DateFormatter {
+  public class var kisweFormat: Foundation.DateFormatter {
+    get
+  }
+}
+extension Event {
+  @objc dynamic public var widgets: [KMSDK.WidgetData] {
+    @objc get
+  }
+}
+@objc public class Event : ObjectiveC.NSObject {
+  @objc public var eventID: Swift.String?
+  @objc public var title: Swift.String?
+  public var status: Swift.String?
+  public var dataUrl: Foundation.URL?
+  @objc public var diaginfoInterval: Swift.String?
+  @objc public var mediaServerP: Swift.String?
+  public var mediaServerS: Swift.String?
+  @objc public var opstatus: Swift.String?
+  public var shareUrl: Swift.String?
+  public var visibility: Swift.String?
+  public var ownedBy: Swift.String?
+  public var thumbnail: Swift.String?
+  @objc public var startTime: Foundation.Date?
+  public var liveViewers: Swift.Int?
+  public var archiveViews: Swift.Int?
+  @objc public var endTime: Foundation.Date?
+  @objc public var channelID: Swift.String?
+  public var videoStartTime: Foundation.Date?
+  public var togglePlaybackControlsWidget: Swift.Bool
+  public var isLoki: Swift.Bool?
+  public var currentStreamsDict: [Swift.String : Any]?
+  public var streams: [Any]?
+  @objc public init(dict: [Swift.String : Any])
+  public static func eventWithDict(_ dict: [Swift.String : Any]) -> KMSDK.Event
+  public static func eventsWithArray(_ array: [[Swift.String : Any]]) -> [KMSDK.Event]
+  public func getVideoSrcFromVideosArrayWithId(_ sourceId: Swift.Int) -> Swift.String?
+  public func getVideoSrcFromClickablesWithClickableId(_ sourceID: Swift.Int) -> Swift.String?
+  @objc public func clickableTypeForClickableId(_ sourceID: Swift.Int) -> Swift.String?
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public class ImageFactory : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension UIImage {
+  public func imageByScalingToSize(_ newSize: CoreGraphics.CGSize, contentMode: UIKit.UIView.ContentMode) -> UIKit.UIImage?
+  public func imageByScalingToFillSize(_ newSize: CoreGraphics.CGSize) -> UIKit.UIImage?
+  public func imageByCroppingToBounds(_ bounds: CoreGraphics.CGRect) -> UIKit.UIImage
+  public func imageByScalingAspectFillSize(_ newSize: CoreGraphics.CGSize) -> UIKit.UIImage
+  public func imageByScalingAspectFitSize(_ newSize: CoreGraphics.CGSize) -> UIKit.UIImage
+  public func grayScaleImage(preserveTransparency transparent: Swift.Bool) -> UIKit.UIImage
+  public func isEqualToImage(_ image: UIKit.UIImage) -> Swift.Bool
+}
+public protocol KMAVPlayerObserverDelegate : AnyObject {
+  func playerObserver(_ observer: KMSDK.KMAVPlayerObserver, periodicTimeObserverObservedPlayer player: AVFoundation.AVPlayer)
+}
+@objc public class KMAVPlayerObserver : ObjectiveC.NSObject {
+  public var mediaPlayer: AVFoundation.AVPlayer?
+  weak public var delegate: KMSDK.KMAVPlayerObserverDelegate?
+  public var observing: Swift.Bool
+  public init(player: AVFoundation.AVPlayer)
+  public func observe()
+  public func attachPeriodicObserverForInterval(_ interval: CoreMedia.CMTime)
+  public func removePeriodicTimeObserver()
+  @objc override dynamic public init()
+  @objc deinit
+}
+public class KMCommandCenterHelper {
+  @objc deinit
+}
+@objc public class KMCreateClipViewController : UIKit.UIViewController {
+  @objc public init(videoURL: Swift.String, startTime: CoreMedia.CMTime, endTime: CoreMedia.CMTime, minValue: Swift.Double, maxValue: Swift.Double, minimumClipLengthSeconds: Swift.Double, postClipCallback: @escaping KMSDK.PostClipCallback, initialClipText: Swift.String?)
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc override dynamic public func viewDidLoad()
+  @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
+  @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
+  @objc override dynamic public func viewDidLayoutSubviews()
+  @objc override dynamic public func didReceiveMemoryWarning()
+  @objc deinit
+  @objc override dynamic public var prefersStatusBarHidden: Swift.Bool {
+    @objc get
+  }
+  @objc override dynamic public var supportedInterfaceOrientations: UIKit.UIInterfaceOrientationMask {
+    @objc get
+  }
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+}
+extension KMCreateClipViewController : KMSDK.KMPlayerViewDelegate {
+  public func playerViewDidPlayToEndTime(playerView: KMSDK.KMPlayerView)
+  public func playerView(_ playerView: KMSDK.KMPlayerView, didObserveItemStatus status: AVFoundation.AVPlayerItem.Status)
+}
+extension KMCreateClipViewController : KMSDK.KMAVPlayerObserverDelegate {
+  public func playerObserver(_ observer: KMSDK.KMAVPlayerObserver, periodicTimeObserverObservedPlayer player: AVFoundation.AVPlayer)
+}
+extension KMCreateClipViewController : UIKit.UITextViewDelegate {
+  @objc dynamic public func textView(_ textView: UIKit.UITextView, shouldChangeTextIn range: Foundation.NSRange, replacementText text: Swift.String) -> Swift.Bool
+  @objc dynamic public func textViewDidChangeSelection(_ textView: UIKit.UITextView)
+}
+extension String {
+  public static let km_createClipViewControllerWillDismissNotification: Swift.String
+}
+extension NSString {
+  public static func km_createClipViewControllerWillDismissNotification() -> Swift.String
+}
+@objc public class KMLocalizationHelper : ObjectiveC.NSObject {
+  public static func setLocalization(_ localization: Swift.String)
+  public static func localizedString(_ string: Swift.String) -> Swift.String
+  @objc deinit
+}
+@objc public protocol KMMediaControllerDelegate : AnyObject {
+  @objc optional func mediaController(_ mediaController: KMSDK.KMMediaViewController, playerStateDidChange newState: KMSDK.KMMediaState)
+  @objc optional func mediaController(_ mediaController: KMSDK.KMMediaViewController, playerSwitchingFromStream fromStreamName: Swift.String?, toStream toStreamName: Swift.String?, withOrientation: Swift.String?)
+  @objc optional func mediaController(_ mediaController: KMSDK.KMMediaViewController, userMovedPlayheadTo playhead: Swift.String)
+  @objc optional func mediaController(_ mediaController: KMSDK.KMMediaViewController, userChangedPlaybackTo playbackState: KMSDK.PlaybackState)
+}
+@objc public enum PlaybackState : Swift.Int {
+  case play
+  case pause
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public class KMMediaPlayerHelper : ObjectiveC.NSObject {
+  public static func initialPlaylistStringForEvent(_ event: KMSDK.Event) -> Swift.String?
+  public static func initialStreamForEvent(_ event: KMSDK.Event) -> Swift.String?
+  @objc public static func playlistStringForVideoName(_ name: Swift.String, event: KMSDK.Event) -> Swift.String?
+  @objc public static func highVariantPlaylistStringForVideoName(_ name: Swift.String, event: KMSDK.Event) -> Swift.String?
+  @objc public static func lowVariantPlaylistStringForVideoName(_ name: Swift.String, event: KMSDK.Event) -> Swift.String?
+  @objc public static func verylowVariantPlaylistStringForVideoName(_ name: Swift.String, event: KMSDK.Event) -> Swift.String?
+  @objc public static func vodHighVariantPlaylistStringForVideoName(_ name: Swift.String, event: KMSDK.Event) -> Swift.String?
+  @objc public static func vodLowVariantPlaylistStringForVideoName(_ name: Swift.String, event: KMSDK.Event) -> Swift.String?
+  @objc public static func vodVerylowVariantPlaylistStringForVideoName(_ name: Swift.String, event: KMSDK.Event) -> Swift.String?
+  public static func requestedStreamIdFromFullURL(_ url: Foundation.URL) -> Swift.String?
+  @objc public static func currentVideoURLForPlayerItem(_ playerItem: AVFoundation.AVPlayerItem) -> Swift.String?
+  @objc public static func urlIsMixStream(_ url: Foundation.URL) -> Swift.Bool
+  public static func mixURLFromVideoURL(_ url: Foundation.URL) -> Foundation.URL?
+  public static func videoURLFromMixURL(_ url: Foundation.URL) -> Foundation.URL?
+  @objc public static func videoNameFromURL(_ url: Foundation.URL) -> Swift.String?
+  public static func videoRectInPlayerView(_ playerView: UIKit.UIView) -> CoreGraphics.CGRect
+  public static func setAudioSessionCategory(_ category: Swift.String)
+  @objc override dynamic public init()
+  @objc deinit
+}
+public enum KMMediaViewStatusBarState {
+  case showAlways
+  case showWithPlayerControls
+  case showNever
+  public static func == (a: KMSDK.KMMediaViewStatusBarState, b: KMSDK.KMMediaViewStatusBarState) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+public enum KMEventMediaState {
+  case noVideoRequested
+  case initialVideoRequested
+  case initialVideoLoaded
+  public static func == (a: KMSDK.KMEventMediaState, b: KMSDK.KMEventMediaState) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+extension KMMediaViewController {
+  public func showAlternatePlayerWithPath(_ path: Swift.String?)
+  public func dismissAlternatePlayer()
+}
+extension KMMediaViewController {
+  public func resetIdleTimer()
+  public func stopIdleTimer()
+}
+extension KMMediaViewController : KMSDK.MediaPlayerInfoProvider {
+  @objc dynamic public var currentStream: Swift.String? {
+    @objc get
+  }
+  @objc dynamic public var currentTime: Foundation.NSNumber? {
+    @objc get
+  }
+  @objc dynamic public var currentEpoch: Foundation.NSNumber? {
+    @objc get
+  }
+}
+extension KMMediaViewController {
+  public func postMediaPlayerShouldReloadNotification()
+}
+extension KMMediaViewController {
+  public func loadOrRepositionOverlayWidgets()
+  public func clearOverlayWidgets()
+  public func hideOrShowOverlayWidgetsForCurrentStream()
+  public func hideAllOverlayWidgets()
+  public func reloadWidgetWebviews()
+  public func removeAllWebviewConstraints()
+}
+extension KMMediaViewController : KiswePlaybackControls.TKPlayerControlsViewDelegate {
+  @objc dynamic public func controlsViewDidPressBack(_ controlsView: KiswePlaybackControls.TKPlayerControlsView!)
+  @objc dynamic public func controlsViewDidPressPlay(_ controlsView: KiswePlaybackControls.TKPlayerControlsView!) -> MediaPlayer.MPRemoteCommandHandlerStatus
+  @objc dynamic public func controlsViewDidPressPause(_ controlsView: KiswePlaybackControls.TKPlayerControlsView!) -> MediaPlayer.MPRemoteCommandHandlerStatus
+  @objc dynamic public func controlsViewDidPressGoLive(_ controlsView: KiswePlaybackControls.TKPlayerControlsView!)
+  @objc dynamic public func controlsViewDidPressSkipBack(_ controlsView: KiswePlaybackControls.TKPlayerControlsView!) -> MediaPlayer.MPRemoteCommandHandlerStatus
+  @objc dynamic public func controlsViewDidPressSkipForward(_ controlsView: KiswePlaybackControls.TKPlayerControlsView!) -> MediaPlayer.MPRemoteCommandHandlerStatus
+  @objc dynamic public func controlsViewWillHideControls(_ controlsView: KiswePlaybackControls.TKPlayerControlsView!)
+  @objc dynamic public func controlsViewWillShowControls(_ controlsView: KiswePlaybackControls.TKPlayerControlsView!)
+  @objc dynamic public func controlsView(_ controlsView: KiswePlaybackControls.TKPlayerControlsView!, sliderDidBeginDraggingAtValue value: Swift.Float)
+  @objc dynamic public func controlsView(_ controlsView: KiswePlaybackControls.TKPlayerControlsView!, sliderDidEndDraggingAtValue value: Swift.Float)
+  @objc dynamic public func controlsView(_ controlsView: KiswePlaybackControls.TKPlayerControlsView!, sliderValueDidChange value: Swift.Float)
+  @objc dynamic public func controlsViewDidPressPipToggleHidePips(_ controlsView: KiswePlaybackControls.TKPlayerControlsView!)
+  @objc dynamic public func controlsViewDidPressPipToggleShowPips(_ controlsView: KiswePlaybackControls.TKPlayerControlsView!)
+  @objc dynamic public func controlsViewDidPressRotate(_ controlsView: KiswePlaybackControls.TKPlayerControlsView!)
+}
+extension KMMediaViewController : KMSDK.KMPlayerViewDelegate {
+  public func playerView(_ playerView: KMSDK.KMPlayerView, didObserveItemStatus status: AVFoundation.AVPlayerItem.Status)
+  public func playerViewDidPlayToEndTime(playerView: KMSDK.KMPlayerView)
+  public func playerView(_ playerView: KMSDK.KMPlayerView, didReceiveTap sender: UIKit.UIGestureRecognizer)
+  public func playerView(_ playerView: KMSDK.KMPlayerView, didReceiveTapAt location: CoreGraphics.CGPoint)
+  public func playerView(_ playerView: KMSDK.KMPlayerView, didObserveIsPlaying isPlaying: Swift.Bool)
+}
+extension KMMediaViewController : KMSDK.KMAVPlayerObserverDelegate {
+  public func playerObserver(_ observer: KMSDK.KMAVPlayerObserver, periodicTimeObserverObservedPlayer player: AVFoundation.AVPlayer)
+}
+extension KMMediaViewController {
+  @objc dynamic public func pauseVideo() -> MediaPlayer.MPRemoteCommandHandlerStatus
+  @objc dynamic public func playVideo() -> MediaPlayer.MPRemoteCommandHandlerStatus
+  public func seekLive(completion: (() -> Swift.Void)?)
+  @objc dynamic public func reloadVideo(seekToCurrentTime: Swift.Bool)
+  @objc dynamic public func setStream(named name: Swift.String, videoOrientation: Swift.String = "landscape")
+  @objc dynamic public func setPlayhead(to timeInSeconds: Swift.Double)
+  @objc dynamic public func togglePlaybackControls()
+  @objc dynamic public class func endTimeForPlayerItem(_ item: AVFoundation.AVPlayerItem) -> CoreMedia.CMTime
+  public func liveSeekableTimeForPlayer() -> CoreMedia.CMTime
+}
+extension KMMediaViewController : KMSDK.VideoControllable {
+  @objc dynamic public var playhead: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc dynamic public var stream: Swift.String? {
+    @objc get
+    @objc set
+  }
+}
+extension KMMediaViewController {
+  @objc override dynamic public func viewWillTransition(to size: CoreGraphics.CGSize, with coordinator: UIKit.UIViewControllerTransitionCoordinator)
+  @objc override dynamic public var preferredStatusBarStyle: UIKit.UIStatusBarStyle {
+    @objc get
+  }
+  @objc override dynamic public var prefersStatusBarHidden: Swift.Bool {
+    @objc get
+  }
+}
+@objc public class KMMediaViewController : UIKit.UIViewController {
+  @objc convenience public init(event: KMSDK.Event, username: Swift.String? = nil, token: Swift.String? = nil)
+  @objc public var event: KMSDK.Event?
+  public var controlsBottomAnchor: UIKit.NSLayoutConstraint?
+  @objc public var playerView: KMSDK.KMPlayerView?
+  public var alternatePlayerView: KMSDK.KMPlayerView?
+  weak public var delegate: KMSDK.KMMediaControllerDelegate?
+  @objc weak public var widgetDelegate: KMSDK.WidgetDelegate?
+  public var realTimeArchiveEnabled: Swift.Bool
+  public var shouldUseRealTimeArchive: Swift.Bool {
+    get
+  }
+  @objc public var playerControls: KiswePlaybackControls.TKPlayerControlsView {
+    @objc get
+    @objc set
+  }
+  public var playerControlsIdleTimerEnabled: Swift.Bool
+  public var playerControlsDefaultIdleTimeSeconds: Swift.Double
+  public var playerSeekTolerance: CoreMedia.CMTime
+  public var observer: KMSDK.KMAVPlayerObserver?
+  @objc public var username: Swift.String?
+  @objc weak public var parentVC: KMSDK.KMParentViewController?
+  public var overlayWidgetToken: Swift.String? {
+    get
+    set
+  }
+  @objc public var metadataObserver: KMSDK.TKMediaPlayerObserver? {
+    @objc get
+    @objc set
+  }
+  public var overlayWidgetsEnabled: Swift.Bool {
+    get
+    set
+  }
+  public var statusBarState: KMSDK.KMMediaViewStatusBarState
+  public var playerPreferredStatusBarStyle: UIKit.UIStatusBarStyle
+  public var rotateButtonVisible: Swift.Bool {
+    get
+    set
+  }
+  public var playerControlsVisible: Swift.Bool {
+    get
+    set
+  }
+  public var minimalControls: Swift.Bool {
+    get
+    set
+  }
+  public var playerOverlaysVisible: Swift.Bool
+  public var restartsPlaybackWhenAudioRouteChanges: Swift.Bool
+  @objc override dynamic public func viewDidLoad()
+  @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
+  @objc override dynamic public func viewWillDisappear(_ animated: Swift.Bool)
+  @objc override dynamic public func didReceiveMemoryWarning()
+  @objc deinit
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+extension KMMediaViewController : KMSDK.WidgetDelegate {
+  @objc dynamic public func widget(_ widget: KMSDK.Widget, handlerForFunctionNamed functionName: Swift.String) -> KMSDK.BridgeFunctionHandler?
+}
+@objc public enum KMMediaState : Swift.Int {
+  case unknown = 0
+  case readyToPlay = 1
+  case failed = 2
+  case playing = 3
+  case paused = 4
+  case geoblocked = 5
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public protocol KMPlayerViewDelegate : AnyObject {
+  func playerViewDidPlayToEndTime(playerView: KMSDK.KMPlayerView)
+  func playerView(_ playerView: KMSDK.KMPlayerView, didObserveItemStatus status: AVFoundation.AVPlayerItem.Status)
+  func playerView(_ playerView: KMSDK.KMPlayerView, didReceiveTap sender: UIKit.UIGestureRecognizer)
+  func playerView(_ playerView: KMSDK.KMPlayerView, didObserveIsPlaying isPlaying: Swift.Bool)
+}
+extension KMPlayerViewDelegate {
+  public func playerViewDidPlayToEndTime(playerView: KMSDK.KMPlayerView)
+  public func playerView(_ playerView: KMSDK.KMPlayerView, didObserveItemStatus status: AVFoundation.AVPlayerItem.Status)
+  public func playerView(_ playerView: KMSDK.KMPlayerView, didReceiveTap sender: UIKit.UIGestureRecognizer)
+  public func playerView(_ playerView: KMSDK.KMPlayerView, didObserveIsPlaying isPlaying: Swift.Bool)
+}
+@objc public class KMPlayerView : UIKit.UIView {
+  weak public var delegate: KMSDK.KMPlayerViewDelegate?
+  public var slateLayer: QuartzCore.CALayer {
+    get
+    set
+  }
+  public var videoRectView: UIKit.UIView {
+    get
+    set
+  }
+  @objc public var player: AVFoundation.AVPlayer? {
+    @objc get
+    @objc set
+  }
+  public var fillMode: KMSDK.KMPlayerViewFillMode! {
+    get
+    set
+  }
+  public var playerState: KMSDK.KMPlayerState {
+    get
+  }
+  public var resourceLoaderDelegate: AVFoundation.AVAssetResourceLoaderDelegate?
+  public var activityIndicatorStyle: UIKit.UIActivityIndicatorView.Style {
+    get
+    set
+  }
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc override dynamic public class var layerClass: Swift.AnyClass {
+    @objc get
+  }
+  @objc override dynamic public func layoutSubviews()
+  @objc deinit
+  public func playWithURL(_ URL: Foundation.URL, completion: ((Swift.Error?) -> Swift.Void)?)
+  @objc public func showSpinner()
+  public func stopSpinner()
+  public func slatePlayerView()
+  public func unslatePlayerView()
+  public func resetPlayer()
+  @objc override dynamic public func observeValue(forKeyPath keyPath: Swift.String?, of object: Any?, change: [Foundation.NSKeyValueChangeKey : Any]?, context: Swift.UnsafeMutableRawPointer?)
+}
+public enum KMPlayerViewFillMode {
+  case resizeAspect
+  case resizeAspectFill
+  case resize
+  public static func == (a: KMSDK.KMPlayerViewFillMode, b: KMSDK.KMPlayerViewFillMode) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+public enum KMPlayerViewError : Swift.Error {
+  case invalidVideoURLError
+  case assetLoadingFailedError
+  case nilPlayerError
+  case assetLoadingCancelledError
+  case unknownError(Swift.String)
+}
+public enum KMPlayerState {
+  case playing
+  case paused
+  case none
+  public static func == (a: KMSDK.KMPlayerState, b: KMSDK.KMPlayerState) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+extension KMSDK {
+  @objc dynamic public func setAPIToken(_ token: Swift.String)
+  @objc dynamic public func setAPIHostUrl(_ apiUrlString: Swift.String)
+  @objc dynamic public func setMsgHost(_ msgHostString: Swift.String)
+}
+extension KMSDK {
+  @objc dynamic public func parentViewControllerWith(eventId: Swift.String, username: Swift.String? = nil, completion: @escaping (KMSDK.KMParentViewController?) -> Swift.Void)
+  @objc dynamic public func parentViewControllerWith(eventDict: [Swift.String : Any], username: Swift.String? = nil) -> KMSDK.KMParentViewController
+  @objc dynamic public func parentViewControllerWith(event: KMSDK.Event, username: Swift.String? = nil) -> KMSDK.KMParentViewController
+}
+extension KMSDK {
+  @objc dynamic public func mediaPlayerControllerWith(eventId: Swift.String, username: Swift.String? = nil, completion: @escaping (KMSDK.KMMediaViewController?) -> Swift.Void)
+  @objc dynamic public func mediaPlayerControllerWith(eventDict: [Swift.String : Any], username: Swift.String? = nil) -> KMSDK.KMMediaViewController
+  @objc dynamic public func mediaPlayerControllerWith(event: KMSDK.Event, username: Swift.String? = nil) -> KMSDK.KMMediaViewController
+}
+@objc public class KMSDK : ObjectiveC.NSObject {
+  @objc public static let shared: KMSDK.KMSDK
+  @objc deinit
+}
+public enum VideoResolution {
+  case hd_720p
+  case hd_1080i
+  case hd_1080p
+  case sd_480i
+  case ed_480p
+  case ed_576p
+  case uhd_4K
+  case uhd_8K
+  public enum VideoDefinition : Swift.String {
+    case High
+    case Enhanced
+    case Standard
+    case UltraHigh
+    public typealias RawValue = Swift.String
+    public init?(rawValue: Swift.String)
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public var Definition: KMSDK.VideoResolution.VideoDefinition {
+    get
+  }
+  public var Width: Swift.Int {
+    get
+  }
+  public var Height: Swift.Int {
+    get
+  }
+  public var Scan: Swift.String {
+    get
+  }
+  public var AspectRatioString: Swift.String {
+    get
+  }
+  public var AspectRatio: Swift.Float {
+    get
+  }
+  public static func == (a: KMSDK.VideoResolution, b: KMSDK.VideoResolution) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+public enum KMEventStatus : Swift.String {
+  case noStatus
+  case pregame
+  case warmup
+  case upcoming
+  case inProgress
+  case completed
+  case archiving
+  case archived
+  case testing
+  case inactive
+  case error
+  public typealias RawValue = Swift.String
+  public init?(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@objc final public class KMWidgetContext : ObjectiveC.NSObject {
+  @objc final public class func getContext() -> [Swift.String : Swift.AnyObject]
+  @objc final public class func setContext(_ context: [Swift.String : Swift.AnyObject])
+  @objc final public class func setPlayer(_ player: AVFoundation.AVPlayer)
+  @objc final public class func setMetadataObserver(_ observer: KMSDK.TKMediaPlayerObserver)
+  @objc final public class func resetContext()
+  @objc final public class func getCurrentPlayer() -> AVFoundation.AVPlayer?
+  @objc final public class func currentPlayerTime() -> CoreMedia.CMTime
+  @objc final public class func currentPlayerEpoch() -> Foundation.NSNumber?
+  @objc final public class func currentPlayerURL() -> Foundation.URL?
+  @objc final public class func currentPlayerCurrentStreamName() -> Swift.String?
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public class RectMaskView : ObjectiveC.NSObject {
+  @objc public var fillColor: UIKit.UIColor {
+    @objc get
+    @objc set
+  }
+  public var radius: CoreGraphics.CGFloat {
+    get
+    set
+  }
+  @objc public var opacity: Swift.Float {
+    @objc get
+    @objc set
+  }
+  @objc public var padding: CoreGraphics.CGFloat
+  public var animated: Swift.Bool
+  public var animationDuration: Swift.Double
+  public var insets: UIKit.UIEdgeInsets
+  public init(drawIn: UIKit.UIView, maskRects: [CoreGraphics.CGRect], referenceFrame: CoreGraphics.CGRect?)
+  @objc public init(drawIn: UIKit.UIView, maskRects: [Foundation.NSValue], referenceFrame: CoreGraphics.CGRect)
+  @objc final public func draw()
+  @objc public func remove()
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public class TKImageDownloadHelper : ObjectiveC.NSObject {
+  @objc public static func batchImageDownload(imageURLs: [Swift.String], imageScale: Foundation.NSNumber?, completion: (([Swift.String : Swift.AnyObject]) -> Swift.Void)?)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public class TKInterfaceUtilities : ObjectiveC.NSObject {
+  @objc public static func resetNavigationBar(_ navigationBar: UIKit.UINavigationBar, style: UIKit.UIBarStyle, color: UIKit.UIColor?, tintColor: UIKit.UIColor?, titleColor: UIKit.UIColor?, translucent: Swift.Bool, hideHairline: Swift.Bool, backgroundImage: UIKit.UIImage?, shadowImage: UIKit.UIImage?, hidden: Swift.Bool)
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension UIColor {
+  public static func kiswePrimaryRedColor() -> UIKit.UIColor
+  public static func kisweGrayOneColor() -> UIKit.UIColor
+  public static func kisweGrayTwoColor() -> UIKit.UIColor
+  public static func kisweGrayThreeColor() -> UIKit.UIColor
+  public static func kisweGrayFourColor() -> UIKit.UIColor
+  public static func kisweGrayFiveColor() -> UIKit.UIColor
+  public static func kisweGraySixColor() -> UIKit.UIColor
+  public static func kisweGraySevenColor() -> UIKit.UIColor
+  public static func kisweGrayEightColor() -> UIKit.UIColor
+}
+@objc public protocol VideoControllable : AnyObject {
+  @objc var playhead: Swift.String? { get set }
+  @objc var stream: Swift.String? { get set }
+}
+@objc public class Widget : UIKit.UIView {
+  @objc override dynamic public var backgroundColor: UIKit.UIColor? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public var isOpaque: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  weak public var delegate: KMSDK.WidgetDelegate?
+  public var mediaPlayerInfoProvider: KMSDK.MediaPlayerInfoProvider? {
+    get
+    set
+  }
+  public var widgetData: KMSDK.WidgetData! {
+    get
+    }
+  weak public var event: KMSDK.Event? {
+    get
+    set
+  }
+  public var apiToken: Swift.String? {
+    get
+    set
+  }
+  public var environment: (apiHost: Swift.String, msgHost: Swift.String)? {
+    get
+    set
+  }
+  public var username: Swift.String? {
+    get
+    set
+  }
+  convenience public init(widgetData: KMSDK.WidgetData, event: KMSDK.Event)
+  @objc override dynamic public func layoutSubviews()
+  public func reload()
+  @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+extension Widget : UIKit.UIScrollViewDelegate {
+  @objc dynamic public func viewForZooming(in scrollView: UIKit.UIScrollView) -> UIKit.UIView?
+}
+@objc public class WidgetContainerViewController : UIKit.UIViewController {
+  @objc public var widgets: [KMSDK.Widget]
+  @objc public var event: KMSDK.Event!
+  @objc public var username: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc weak public var widgetDelegate: KMSDK.WidgetDelegate?
+  @objc weak public var mediaPlayerInfoProvider: KMSDK.MediaPlayerInfoProvider? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public func viewDidLoad()
+  @objc override dynamic public func viewDidLayoutSubviews()
+  @objc deinit
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+extension WidgetContainerViewController : KMSDK.WidgetDelegate {
+  @objc dynamic public func widget(_ widget: KMSDK.Widget, handlerForFunctionNamed functionName: Swift.String) -> KMSDK.BridgeFunctionHandler?
+}
+extension WidgetContainerViewController : KMSDK.WidgetDisplayTextInputHandler {
+  @objc dynamic public func widgetDisplayTextInput(initialText: Swift.String?, sendMessageCallback: @escaping (Swift.String) -> Swift.Void)
+}
+extension WidgetContainerViewController : KMSDK.WidgetDisplaySocialShareHandler {
+  @objc dynamic public func widgetDisplaySocialShare(url: Foundation.URL)
+}
+@objc public enum WidgetType : Swift.Int {
+  case webview, overlay
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public class WidgetData : ObjectiveC.NSObject {
+  final public let title: Swift.String?
+  final public let iconUrl: Foundation.URL?
+  final public let id: Swift.String?
+  @objc final public let widgetId: Foundation.NSNumber?
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public protocol WidgetDelegate : AnyObject {
+  @objc func widget(_ widget: KMSDK.Widget, handlerForFunctionNamed functionName: Swift.String) -> KMSDK.BridgeFunctionHandler?
+}
+@objc public protocol WidgetDisplayTextInputHandler : AnyObject {
+  @objc func widgetDisplayTextInput(initialText: Swift.String?, sendMessageCallback: @escaping (Swift.String) -> Swift.Void)
+}
+@objc public protocol WidgetDisplaySocialShareHandler : AnyObject {
+  @objc func widgetDisplaySocialShare(url: Foundation.URL)
+}
+public typealias PostClipCallback = (KMSDK.ClipInfo) -> Swift.Void
+@objc public protocol WidgetDisplayClipEditorHandler : AnyObject {
+  @objc func widgetDisplayClipEditorWith(initialInfo: KMSDK.ClipInfo?, postClipCallback: @escaping KMSDK.PostClipCallback)
+}
+extension KMSDK.PlaybackState : Swift.Equatable {}
+extension KMSDK.PlaybackState : Swift.Hashable {}
+extension KMSDK.PlaybackState : Swift.RawRepresentable {}
+extension KMSDK.KMMediaViewStatusBarState : Swift.Equatable {}
+extension KMSDK.KMMediaViewStatusBarState : Swift.Hashable {}
+extension KMSDK.KMEventMediaState : Swift.Equatable {}
+extension KMSDK.KMEventMediaState : Swift.Hashable {}
+extension KMSDK.KMMediaState : Swift.Equatable {}
+extension KMSDK.KMMediaState : Swift.Hashable {}
+extension KMSDK.KMMediaState : Swift.RawRepresentable {}
+extension KMSDK.KMPlayerViewFillMode : Swift.Equatable {}
+extension KMSDK.KMPlayerViewFillMode : Swift.Hashable {}
+extension KMSDK.KMPlayerState : Swift.Equatable {}
+extension KMSDK.KMPlayerState : Swift.Hashable {}
+extension KMSDK.VideoResolution : Swift.Equatable {}
+extension KMSDK.VideoResolution : Swift.Hashable {}
+extension KMSDK.VideoResolution.VideoDefinition : Swift.Equatable {}
+extension KMSDK.VideoResolution.VideoDefinition : Swift.Hashable {}
+extension KMSDK.VideoResolution.VideoDefinition : Swift.RawRepresentable {}
+extension KMSDK.KMEventStatus : Swift.Hashable {}
+extension KMSDK.KMEventStatus : Swift.RawRepresentable {}
+extension KMSDK.WidgetType : Swift.Hashable {}
+extension KMSDK.WidgetType : Swift.RawRepresentable {}
