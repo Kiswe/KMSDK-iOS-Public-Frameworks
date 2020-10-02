@@ -48,7 +48,7 @@
 - (void)repositionOverlayObjects;
 
 // Static method
-- (CGFloat)heightOffsetForLetterbox;
+// - (CGFloat)heightOffsetForLetterbox;
 
 // Define player state enum
 typedef enum : NSInteger {
