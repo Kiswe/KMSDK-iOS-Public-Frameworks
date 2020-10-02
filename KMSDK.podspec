@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'KMSDK'
-  s.version          = '2.5.4'
+  s.version          = '2.6.0'
   s.summary          = 'Kiswe iOS SDK'
 
 # This description is used to generate tags and improve search results.
@@ -26,7 +26,7 @@ Kiswe iOS SDK Framework
   s.author           = { 'Chris Boraski' => 'chris.boraski@kiswe.com' }
   s.source           = { :git => 'https://github.com/Kiswe/KMSDK-iOS-Public-Frameworks.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '11.0'
   s.swift_version = '4.2'
 
   s.dependency 'WebViewJavascriptBridge', '~> 6.0.2'
