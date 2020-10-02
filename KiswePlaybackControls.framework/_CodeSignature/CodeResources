@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		Q0sBnZwewRRLlf4f5DAg/bs4axE=
+		Bf/mJg/cs8mwvkPvwM5fZ6db3gs=
 		</data>
 		<key>Headers/KMAssets.h</key>
 		<data>
@@ -30,39 +30,55 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		LOzsduAacw0TFGnvnuK8DVvtU9c=
+		q61OVzxFuPIo5MXlTvVzobzZ8Cs=
+		</data>
+		<key>Modules/KiswePlaybackControls.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
+		<data>
+		gjj5PqD97ce0qitBI0tL8JUADM8=
+		</data>
+		<key>Modules/KiswePlaybackControls.swiftmodule/Project/arm64.swiftsourceinfo</key>
+		<data>
+		gjj5PqD97ce0qitBI0tL8JUADM8=
+		</data>
+		<key>Modules/KiswePlaybackControls.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
+		<data>
+		Cj5U8eSTr4y/pgDSATRtU/t7ExM=
+		</data>
+		<key>Modules/KiswePlaybackControls.swiftmodule/Project/x86_64.swiftsourceinfo</key>
+		<data>
+		Cj5U8eSTr4y/pgDSATRtU/t7ExM=
 		</data>
 		<key>Modules/KiswePlaybackControls.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		sFceiLFegUzi/nuwLRvULQWjBis=
+		3xKD+3UXvfogPSFLIaEsn9xZ25E=
 		</data>
 		<key>Modules/KiswePlaybackControls.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		QXME99MvC8TaT7Z+YBfkifUp04g=
+		ptP2WRFIGDRF1WcGAfwNRMtPhj0=
 		</data>
 		<key>Modules/KiswePlaybackControls.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		sFceiLFegUzi/nuwLRvULQWjBis=
+		3xKD+3UXvfogPSFLIaEsn9xZ25E=
 		</data>
 		<key>Modules/KiswePlaybackControls.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		QXME99MvC8TaT7Z+YBfkifUp04g=
+		ptP2WRFIGDRF1WcGAfwNRMtPhj0=
 		</data>
 		<key>Modules/KiswePlaybackControls.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		LHo0w7defaKl5jaoquIJKb/hfgM=
+		Z8fc/RqTwkNN5pGJYeCwAAlHdho=
 		</data>
 		<key>Modules/KiswePlaybackControls.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		qp6XBA+d7yeJymmvjBLP6+eJu6M=
+		CciSgg7pzW1J6dTJDIPMXvaKvtQ=
 		</data>
 		<key>Modules/KiswePlaybackControls.swiftmodule/x86_64.swiftdoc</key>
 		<data>
-		LHo0w7defaKl5jaoquIJKb/hfgM=
+		Z8fc/RqTwkNN5pGJYeCwAAlHdho=
 		</data>
 		<key>Modules/KiswePlaybackControls.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		qp6XBA+d7yeJymmvjBLP6+eJu6M=
+		CciSgg7pzW1J6dTJDIPMXvaKvtQ=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -70,7 +86,7 @@
 		</data>
 		<key>TKPlayerControlsView.nib</key>
 		<data>
-		4IgBwLkjQdPZmC3f4wgYifsTdOY=
+		pfemzpdPMeam6v6qgnxnwZUkB8w=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -79,7 +95,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			jy46zT50krg8Obp13PbI1VLF2zd/mrnhrmav8ysSGyY=
+			pk4bm1C3O9hx2syVQib2EfgG9WBI9SymEH2uRvff2GI=
 			</data>
 		</dict>
 		<key>Headers/KMAssets.h</key>
@@ -117,60 +133,88 @@
 			SZo3NVx/nQ/yiT7iC74wq2L4DvZhRLNvjv5FkkZfbJg=
 			</data>
 		</dict>
+		<key>Modules/KiswePlaybackControls.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			PTmW/9746IL7dVAzfUvZ9gEBxrKvriJbwVxSuEgRSm4=
+			</data>
+		</dict>
+		<key>Modules/KiswePlaybackControls.swiftmodule/Project/arm64.swiftsourceinfo</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			PTmW/9746IL7dVAzfUvZ9gEBxrKvriJbwVxSuEgRSm4=
+			</data>
+		</dict>
+		<key>Modules/KiswePlaybackControls.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ZaoZWBNpDD7QkyfLwLLHyV5iZQ9KJuNeYv5cFevhiq0=
+			</data>
+		</dict>
+		<key>Modules/KiswePlaybackControls.swiftmodule/Project/x86_64.swiftsourceinfo</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ZaoZWBNpDD7QkyfLwLLHyV5iZQ9KJuNeYv5cFevhiq0=
+			</data>
+		</dict>
 		<key>Modules/KiswePlaybackControls.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			kihdRquo3xr9iGIx6DciJFggKU7VNsNNZxwmv+Khny8=
+			hqqv+HIroOrEkWR1u1RrClr8Tv9V02D5+pOZfezQ5Qo=
 			</data>
 		</dict>
 		<key>Modules/KiswePlaybackControls.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			qPvYncEqz63wq4oHFbjrD5lWtZCnjcU47oqzrN3rxYg=
+			bOZMAL6MHzepvh/bcAqWUvCwsORkaDsJbbwMofLaQb8=
 			</data>
 		</dict>
 		<key>Modules/KiswePlaybackControls.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			kihdRquo3xr9iGIx6DciJFggKU7VNsNNZxwmv+Khny8=
+			hqqv+HIroOrEkWR1u1RrClr8Tv9V02D5+pOZfezQ5Qo=
 			</data>
 		</dict>
 		<key>Modules/KiswePlaybackControls.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			qPvYncEqz63wq4oHFbjrD5lWtZCnjcU47oqzrN3rxYg=
+			bOZMAL6MHzepvh/bcAqWUvCwsORkaDsJbbwMofLaQb8=
 			</data>
 		</dict>
 		<key>Modules/KiswePlaybackControls.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			mHYbBrBAvnfjdbSAja0/D+hfgrATlDVgbsN9RdG1XQ0=
+			UAsvKW9EJ9/coRG8mnbahHbEZs+TJE4wt0r+ZR03Ae0=
 			</data>
 		</dict>
 		<key>Modules/KiswePlaybackControls.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Bq9MESad/1QHkR7pjR/jnyH67Eaa9UfKf7HnDMX2f3g=
+			gbC8c09F46foZawk+8pfd3Jzmh9ixbp6MrFdjpIMraQ=
 			</data>
 		</dict>
 		<key>Modules/KiswePlaybackControls.swiftmodule/x86_64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			mHYbBrBAvnfjdbSAja0/D+hfgrATlDVgbsN9RdG1XQ0=
+			UAsvKW9EJ9/coRG8mnbahHbEZs+TJE4wt0r+ZR03Ae0=
 			</data>
 		</dict>
 		<key>Modules/KiswePlaybackControls.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Bq9MESad/1QHkR7pjR/jnyH67Eaa9UfKf7HnDMX2f3g=
+			gbC8c09F46foZawk+8pfd3Jzmh9ixbp6MrFdjpIMraQ=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -184,7 +228,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZlkYRpP0FLujRT46Z+Ja0Vj+Sj/VNdtFzpMlkvTA8kw=
+			+mJ6kssX5SsFjaU9Kce7C1gevlhaxJp2laHvscfwvgY=
 			</data>
 		</dict>
 	</dict>

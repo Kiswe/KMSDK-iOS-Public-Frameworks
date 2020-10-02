@@ -14,39 +14,55 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		Hp5L/HLAsrQV3ccFS0jyaxnyzSw=
+		3lyD/UnTl1oXqPQXilt2TF25KiI=
+		</data>
+		<key>Modules/RTArchiver.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
+		<data>
+		Xv/iF6kvSh86uLqTCBxzU9tT650=
+		</data>
+		<key>Modules/RTArchiver.swiftmodule/Project/arm64.swiftsourceinfo</key>
+		<data>
+		Xv/iF6kvSh86uLqTCBxzU9tT650=
+		</data>
+		<key>Modules/RTArchiver.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
+		<data>
+		alC+9iZaUS6nK/KlAZPYaR0KoUs=
+		</data>
+		<key>Modules/RTArchiver.swiftmodule/Project/x86_64.swiftsourceinfo</key>
+		<data>
+		alC+9iZaUS6nK/KlAZPYaR0KoUs=
 		</data>
 		<key>Modules/RTArchiver.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		wycqqShmomsf/gW1LeCt+aafr2o=
+		9H3AYHW79O63IWcBKZOsY+I2YJI=
 		</data>
 		<key>Modules/RTArchiver.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		xlfr1h9EWTCc/biGBfA7VjJHr9g=
+		rS5N7E9zbGmEstJ/wfSvnA5ezoo=
 		</data>
 		<key>Modules/RTArchiver.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		wycqqShmomsf/gW1LeCt+aafr2o=
+		9H3AYHW79O63IWcBKZOsY+I2YJI=
 		</data>
 		<key>Modules/RTArchiver.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		xlfr1h9EWTCc/biGBfA7VjJHr9g=
+		rS5N7E9zbGmEstJ/wfSvnA5ezoo=
 		</data>
 		<key>Modules/RTArchiver.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		dU7C++UJufyA7VRSD2EcMTwNpjY=
+		20HE8aOrteNkfFURHfmEibMNMN0=
 		</data>
 		<key>Modules/RTArchiver.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		md8AvHZXHJukSM+OvwfHt6PHFRM=
+		wgDDPfIDEU2HA/VkemvVzllhL8I=
 		</data>
 		<key>Modules/RTArchiver.swiftmodule/x86_64.swiftdoc</key>
 		<data>
-		dU7C++UJufyA7VRSD2EcMTwNpjY=
+		20HE8aOrteNkfFURHfmEibMNMN0=
 		</data>
 		<key>Modules/RTArchiver.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		md8AvHZXHJukSM+OvwfHt6PHFRM=
+		wgDDPfIDEU2HA/VkemvVzllhL8I=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -69,60 +85,88 @@
 			T5fbkWcJ+h0C8wZzydDU8xAzqsWWezaitnriAyZvngU=
 			</data>
 		</dict>
+		<key>Modules/RTArchiver.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			5tV7n7IA338JbY8oqBNqtlb5KNWZTIarXtPWL9VLWWo=
+			</data>
+		</dict>
+		<key>Modules/RTArchiver.swiftmodule/Project/arm64.swiftsourceinfo</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			5tV7n7IA338JbY8oqBNqtlb5KNWZTIarXtPWL9VLWWo=
+			</data>
+		</dict>
+		<key>Modules/RTArchiver.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Ds52YyeTX9UFuC77OVsWB8bhv4ZF9z0gBmOPZsuL+sU=
+			</data>
+		</dict>
+		<key>Modules/RTArchiver.swiftmodule/Project/x86_64.swiftsourceinfo</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Ds52YyeTX9UFuC77OVsWB8bhv4ZF9z0gBmOPZsuL+sU=
+			</data>
+		</dict>
 		<key>Modules/RTArchiver.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			pIMSJ+W1vOugnPn+WQSimV04GwV9GnsxZ1B27LVYikI=
+			Mm9P5nONzo2wLoY86k59hViX01HkhUeRSC7rs5/nCLA=
 			</data>
 		</dict>
 		<key>Modules/RTArchiver.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			c+n+pwP1yT83GBaV5eis0V4sX/gegoTRZ2o4w7ECQEU=
+			LRVf+sqfuTC6dbpFezh0f7N7LiXeRfQttJd7L0hAZ1I=
 			</data>
 		</dict>
 		<key>Modules/RTArchiver.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			pIMSJ+W1vOugnPn+WQSimV04GwV9GnsxZ1B27LVYikI=
+			Mm9P5nONzo2wLoY86k59hViX01HkhUeRSC7rs5/nCLA=
 			</data>
 		</dict>
 		<key>Modules/RTArchiver.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			c+n+pwP1yT83GBaV5eis0V4sX/gegoTRZ2o4w7ECQEU=
+			LRVf+sqfuTC6dbpFezh0f7N7LiXeRfQttJd7L0hAZ1I=
 			</data>
 		</dict>
 		<key>Modules/RTArchiver.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			v4pPz1U3oqyx6wti42z4AdGn3aXQ5GbqOu6F0m9H+W8=
+			VlzXtpfXY2pZ+VmGd5Nd8/B47pStBLUvmhq4OXKug1Y=
 			</data>
 		</dict>
 		<key>Modules/RTArchiver.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			0gyFZN2dal9VFlkICoYLU9joaZvb2kNfBeHWkDaZGo0=
+			RVZKmFJpri5rGJ6IBgs+UPMy/lP/3hdc2t25feezyq0=
 			</data>
 		</dict>
 		<key>Modules/RTArchiver.swiftmodule/x86_64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			v4pPz1U3oqyx6wti42z4AdGn3aXQ5GbqOu6F0m9H+W8=
+			VlzXtpfXY2pZ+VmGd5Nd8/B47pStBLUvmhq4OXKug1Y=
 			</data>
 		</dict>
 		<key>Modules/RTArchiver.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			0gyFZN2dal9VFlkICoYLU9joaZvb2kNfBeHWkDaZGo0=
+			RVZKmFJpri5rGJ6IBgs+UPMy/lP/3hdc2t25feezyq0=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

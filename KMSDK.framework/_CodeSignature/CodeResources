@@ -70,39 +70,55 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		2gYbKLC/P1SZI5qnII9OFydF3VE=
+		QoOYRKbd68TKGGSwNkqF2vlw0jQ=
+		</data>
+		<key>Modules/KMSDK.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
+		<data>
+		IfsXZNhpTvaC1vyTarzwaibFLjw=
+		</data>
+		<key>Modules/KMSDK.swiftmodule/Project/arm64.swiftsourceinfo</key>
+		<data>
+		IfsXZNhpTvaC1vyTarzwaibFLjw=
+		</data>
+		<key>Modules/KMSDK.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
+		<data>
+		RHgHt6RBt9sdIWD1taqWPwg7Sto=
+		</data>
+		<key>Modules/KMSDK.swiftmodule/Project/x86_64.swiftsourceinfo</key>
+		<data>
+		RHgHt6RBt9sdIWD1taqWPwg7Sto=
 		</data>
 		<key>Modules/KMSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		HddfOJN2ihWXob30/MNCt50J+Jk=
+		2iG0sBDt8/e3I4duSfj3OeStof8=
 		</data>
 		<key>Modules/KMSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		DC/a5gvaiAXIEaB8bH9MLtvCIJk=
+		sU4ON45TPSRdEg1zJnPdoMYVOjE=
 		</data>
 		<key>Modules/KMSDK.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		HddfOJN2ihWXob30/MNCt50J+Jk=
+		2iG0sBDt8/e3I4duSfj3OeStof8=
 		</data>
 		<key>Modules/KMSDK.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		DC/a5gvaiAXIEaB8bH9MLtvCIJk=
+		sU4ON45TPSRdEg1zJnPdoMYVOjE=
 		</data>
 		<key>Modules/KMSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		QR7v2ZSA146O/DVnJE0eoKMMkOk=
+		W8GoUEUcFeIqYOzwwsIjgGOjOV4=
 		</data>
 		<key>Modules/KMSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		5/QdYUZoDiqvxchnXMDJqOT9xRw=
+		X+0bvHiSZ2BJ8X860Xdxdh281ok=
 		</data>
 		<key>Modules/KMSDK.swiftmodule/x86_64.swiftdoc</key>
 		<data>
-		QR7v2ZSA146O/DVnJE0eoKMMkOk=
+		W8GoUEUcFeIqYOzwwsIjgGOjOV4=
 		</data>
 		<key>Modules/KMSDK.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		5/QdYUZoDiqvxchnXMDJqOT9xRw=
+		X+0bvHiSZ2BJ8X860Xdxdh281ok=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -114,19 +130,19 @@
 		</data>
 		<key>Parent.storyboardc/TKParentViewController.nib</key>
 		<data>
-		qKy7mhSE4kT1TcgHyyFHUJ8NxYg=
+		cF6FnuhXR6r4XbyQ2sdhvGcrDj0=
 		</data>
 		<key>Parent.storyboardc/WidgetContainerViewController.nib</key>
 		<data>
-		b6dxlkkZDq/ypSj0eZbHZsL3KTk=
+		ftVZFzdjezklgxwWZOCUzPwgytM=
 		</data>
 		<key>Parent.storyboardc/myY-fD-c81-view-6t1-ui-v7w.nib</key>
 		<data>
-		2XtBh2u9YCfo9Hef28RFIzGL7j8=
+		47jDHfvdDyf/bf+2ppJ1Lk2C3Sk=
 		</data>
 		<key>Parent.storyboardc/tDL-8q-5dM-view-lsr-sC-JaT.nib</key>
 		<data>
-		eYYjpW1XO5STKeP7RfRR++FvsVw=
+		mjEJWLy/XNE9a/gWeQtYl/8Yvdk=
 		</data>
 		<key>kiswe_loading_preroll.mp4</key>
 		<data>
@@ -247,60 +263,88 @@
 			DDwf/NvoWv/9xO/38OoBtX6fdb8Oqty/TKoMGKBzg9k=
 			</data>
 		</dict>
+		<key>Modules/KMSDK.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			y827P+RNMJlVEbXyGRAIjyfKFBS26bKFIBzUktME7M4=
+			</data>
+		</dict>
+		<key>Modules/KMSDK.swiftmodule/Project/arm64.swiftsourceinfo</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			y827P+RNMJlVEbXyGRAIjyfKFBS26bKFIBzUktME7M4=
+			</data>
+		</dict>
+		<key>Modules/KMSDK.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			A89vzjQyA0hzG5IG36/fC1hm3T1rbj1rJ/Z4cFDuyWE=
+			</data>
+		</dict>
+		<key>Modules/KMSDK.swiftmodule/Project/x86_64.swiftsourceinfo</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			A89vzjQyA0hzG5IG36/fC1hm3T1rbj1rJ/Z4cFDuyWE=
+			</data>
+		</dict>
 		<key>Modules/KMSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			pTblKuInU5jmoy5FN0/pQdzmwaPFQDDQaehzsoKSoRc=
+			nCmh+IoGoNWxkOKtFt+vldjQVeCuLEuX4bH8ELoApm8=
 			</data>
 		</dict>
 		<key>Modules/KMSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			3V2a3/t9JHZQh5t+JvX62CTZQ8Go6nhiLsZse3AyPaw=
+			Yz0g7xPAqLyyAsed5CHToofQFMw7pZFrvqe36MRFgkY=
 			</data>
 		</dict>
 		<key>Modules/KMSDK.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			pTblKuInU5jmoy5FN0/pQdzmwaPFQDDQaehzsoKSoRc=
+			nCmh+IoGoNWxkOKtFt+vldjQVeCuLEuX4bH8ELoApm8=
 			</data>
 		</dict>
 		<key>Modules/KMSDK.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			3V2a3/t9JHZQh5t+JvX62CTZQ8Go6nhiLsZse3AyPaw=
+			Yz0g7xPAqLyyAsed5CHToofQFMw7pZFrvqe36MRFgkY=
 			</data>
 		</dict>
 		<key>Modules/KMSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			cHoG9HiKhDpZOUNnEK/9I6W3Soyneuj/hkZrQMhK8vs=
+			y0VvIcaUPGDmNV2DIk84qG3c2rIbLGvbqpTJ26pulrw=
 			</data>
 		</dict>
 		<key>Modules/KMSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			KbNdNHE/hXV/x5OwDrxDIel8M4npEYBhJ0QFoE3+Kuw=
+			sxtOMzguU3aGlsgV7/rdxAubB+E+hGeXrDSOyelZJos=
 			</data>
 		</dict>
 		<key>Modules/KMSDK.swiftmodule/x86_64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			cHoG9HiKhDpZOUNnEK/9I6W3Soyneuj/hkZrQMhK8vs=
+			y0VvIcaUPGDmNV2DIk84qG3c2rIbLGvbqpTJ26pulrw=
 			</data>
 		</dict>
 		<key>Modules/KMSDK.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			KbNdNHE/hXV/x5OwDrxDIel8M4npEYBhJ0QFoE3+Kuw=
+			sxtOMzguU3aGlsgV7/rdxAubB+E+hGeXrDSOyelZJos=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -321,28 +365,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			S9qdYIQPwx2Kja9SHASjPmXVIeObW38Ge7N9ENRIa2A=
+			9tH/pIGqPCKCv1eZCCnluIKEjOFVEQuTfgZ2nUoCsGg=
 			</data>
 		</dict>
 		<key>Parent.storyboardc/WidgetContainerViewController.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			pAXwED6qFZVGjexg1ZO67gBqBKCuN3CPkNmxL35Vke0=
+			5uM9Jb2ZeqZBibqp0rktEKWXEx6/UyOoA91Zgr2XQeA=
 			</data>
 		</dict>
 		<key>Parent.storyboardc/myY-fD-c81-view-6t1-ui-v7w.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			arZOsXPHqKWhRE3PWMmHMf/tAGWpZMam8PjIBIDZevY=
+			DYW2jEmZsci3RmRFpRP1IAjjUfp1l2N9ZbvFZMaEIos=
 			</data>
 		</dict>
 		<key>Parent.storyboardc/tDL-8q-5dM-view-lsr-sC-JaT.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			+iar7Zz+X0KdE5iNMGkByYlkRha6k92i0j0LDSbLRnM=
+			CFGrKVh0SzcRy4Rnc8HoNJLnPSIwqzCzRUlXOTC+Bhw=
 			</data>
 		</dict>
 		<key>kiswe_loading_preroll.mp4</key>
